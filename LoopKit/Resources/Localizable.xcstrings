@@ -2217,9 +2217,6 @@
         }
       }
     },
-    "Biking" : {
-      "comment" : "biking activity preset name"
-    },
     "Bolus" : {
       "comment" : "Title for bolus dose type",
       "localizations" : {
@@ -7376,11 +7373,11 @@
         }
       }
     },
-    "Jogging" : {
-      "comment" : "jogging activity preset name"
-    },
     "Light-to-Moderate Intensity Exercise" : {
 
+    },
+    "LOW" : {
+      "comment" : "low preset name"
     },
     "Lyumjev" : {
       "comment" : "Brand name for lyumjev insulin type\nTitle for Lyumjev insulin type",
@@ -11529,9 +11526,6 @@
         }
       }
     },
-    "Strength Training" : {
-      "comment" : "strength training activity preset name"
-    },
     "Suspended" : {
       "comment" : "Title for suspend dose type",
       "localizations" : {
@@ -13709,9 +13703,6 @@
           }
         }
       }
-    },
-    "Walking" : {
-      "comment" : "walking activity preset name"
     },
     "Workout" : {
       "comment" : "Title for workout mode",

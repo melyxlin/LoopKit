@@ -170,8 +170,9 @@ public struct TemporaryPreset: Hashable, Sendable {
     public var duration: TemporaryScheduleOverride.Duration
     public var scheduleStartDate: Date?
     public var repeatOptions: PresetScheduleRepeatOptions?
+    public var autoStartScheduledPreset: Bool
 
-    public init(id: String = UUID().uuidString, symbol: PresetSymbol?, name: String, settings: TemporaryPresetSettings, duration: TemporaryScheduleOverride.Duration, scheduleStartDate: Date? = nil, repeatOptions: PresetScheduleRepeatOptions = .none) {
+    public init(id: String = UUID().uuidString, symbol: PresetSymbol?, name: String, settings: TemporaryPresetSettings, duration: TemporaryScheduleOverride.Duration, scheduleStartDate: Date? = nil, repeatOptions: PresetScheduleRepeatOptions = .none, autoStartScheduledPreset: Bool = false) {
         self.id = id
         self.symbol = symbol
         self.name = name
@@ -179,6 +180,8 @@ public struct TemporaryPreset: Hashable, Sendable {
         self.duration = duration
         self.scheduleStartDate = scheduleStartDate
         self.repeatOptions = repeatOptions
+        self.autoStartScheduledPreset = autoStartScheduledPreset
+        
     }
 
     public func nextScheduledStartAfter(_ date: Date, calendar: Calendar = .current) -> Date? {
@@ -255,6 +258,7 @@ extension TemporaryPreset: RawRepresentable {
 
         let scheduleStartDate = rawValue["scheduleStartDate"] as? Date
         let rawRepeatOptions = rawValue["repeatOptions"] as? PresetScheduleRepeatOptions.RawValue
+        let autoStartScheduledPreset = rawValue["autoScheduledPreset"] as? Bool ?? false
         
         var symbol: PresetSymbol? = nil
         if let symbolRawValue = rawValue["symbol"] as? PresetSymbol.RawValue {
@@ -270,7 +274,8 @@ extension TemporaryPreset: RawRepresentable {
             settings: settings,
             duration: duration,
             scheduleStartDate: scheduleStartDate,
-            repeatOptions: rawRepeatOptions.flatMap(PresetScheduleRepeatOptions.init) ?? .none
+            repeatOptions: rawRepeatOptions.flatMap(PresetScheduleRepeatOptions.init) ?? .none,
+            autoStartScheduledPreset: autoStartScheduledPreset
         )
     }
 
@@ -293,9 +298,72 @@ extension TemporaryPreset: RawRepresentable {
         if let repeatOptions {
             rval["repeatOptions"] = repeatOptions.rawValue
         }
+        
+        rval["autoStartScheduledPreset"] = autoStartScheduledPreset
 
         return rval
     }
 }
 
-extension TemporaryPreset: Codable {}
+extension TemporaryPreset: Codable {
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case symbol
+        case name
+        case settings
+        case duration
+        case scheduleStartDate
+        case repeatOptions
+        case autoStartScheduledPreset
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        id = try container.decode(String.self, forKey: .id)
+        symbol = try container.decodeIfPresent(PresetSymbol.self, forKey: .symbol)
+        name = try container.decode(String.self, forKey: .name)
+        settings = try container.decode(TemporaryPresetSettings.self, forKey: .settings)
+        duration = try container.decode(
+            TemporaryScheduleOverride.Duration.self,
+            forKey: .duration
+        )
+        scheduleStartDate = try container.decodeIfPresent(
+            Date.self,
+            forKey: .scheduleStartDate
+        )
+        repeatOptions = try container.decodeIfPresent(
+            PresetScheduleRepeatOptions.self,
+            forKey: .repeatOptions
+        )
+
+        // Backward compatibility:
+        // presets saved before this feature do not contain this key.
+        autoStartScheduledPreset = try container.decodeIfPresent(
+            Bool.self,
+            forKey: .autoStartScheduledPreset
+        ) ?? false
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encode(id, forKey: .id)
+        try container.encodeIfPresent(symbol, forKey: .symbol)
+        try container.encode(name, forKey: .name)
+        try container.encode(settings, forKey: .settings)
+        try container.encode(duration, forKey: .duration)
+        try container.encodeIfPresent(
+            scheduleStartDate,
+            forKey: .scheduleStartDate
+        )
+        try container.encodeIfPresent(
+            repeatOptions,
+            forKey: .repeatOptions
+        )
+        try container.encode(
+            autoStartScheduledPreset,
+            forKey: .autoStartScheduledPreset
+        )
+    }
+}

@@ -12,10 +12,11 @@ import LoopAlgorithm
 
 public struct ActivityPreset: Hashable, Identifiable, Sendable, RawRepresentable, Codable {
     public enum ActivityType: String, Hashable, Identifiable, Sendable, Codable, CaseIterable {
-        case jogging
-        case walking
-        case biking
-        case strengthTraining
+//        case jogging
+//        case walking
+//        case biking
+        case low
+//        case strengthTraining
         
         public init?(fromId id: String) {
             guard let typeString = id.split(separator: "activity-").last, let activityType = ActivityType(rawValue: String(typeString)) else {
@@ -31,14 +32,16 @@ public struct ActivityPreset: Hashable, Identifiable, Sendable, RawRepresentable
         
         public var systemImageName: String {
             switch self {
-            case .jogging:
-                "figure.run"
-            case .walking:
-                "figure.walk"
-            case .biking:
-                "figure.outdoor.cycle"
-            case .strengthTraining:
-                "figure.strengthtraining.traditional"
+//            case .jogging:
+////                "figure.run"
+//            case .walking:
+//                "figure.walk"
+//            case .biking:
+//                "figure.outdoor.cycle"
+            case .low:
+                "arrow.down"
+//            case .strengthTraining:
+//                "figure.strengthtraining.traditional"
             }
         }
         
@@ -48,27 +51,34 @@ public struct ActivityPreset: Hashable, Identifiable, Sendable, RawRepresentable
         
         public var name: String {
             switch self {
-            case .biking: NSLocalizedString("Biking", comment: "biking activity preset name")
-            case .jogging: NSLocalizedString("Jogging", comment: "jogging activity preset name")
-            case .walking: NSLocalizedString("Walking", comment: "walking activity preset name")
-            case .strengthTraining: NSLocalizedString("Strength Training", comment: "strength training activity preset name")
+//            case .biking: NSLocalizedString("Biking", comment: "biking activity preset name")
+//            case .jogging: NSLocalizedString("Jogging", comment: "jogging activity preset name")
+//            case .walking: NSLocalizedString("Walking", comment: "walking activity preset name")
+            case.low: NSLocalizedString("LOW", comment: "low preset name")
+//            case .strengthTraining: NSLocalizedString("Strength Training", comment: "strength training activity preset name")
             }
         }
         
+        
         private var defaultTargetRange: ClosedRange<LoopQuantity> {
-            LoopQuantity(unit: .milligramsPerDeciliter, doubleValue: 150)...LoopQuantity(unit: .milligramsPerDeciliter, doubleValue: 170)
+            switch self{
+//            case .strengthTraining: LoopQuantity(unit: .milligramsPerDeciliter, doubleValue: 150)...LoopQuantity(unit: .milligramsPerDeciliter, doubleValue: 170)
+            case .low: LoopQuantity(unit: .milligramsPerDeciliter, doubleValue: 200)...LoopQuantity(unit: .milligramsPerDeciliter, doubleValue: 200)
+            }
         }
         
         public var defaultInsulinNeedsScaleFactor: Double {
             switch self {
-            case .biking:
-                0.22
-            case .jogging:
-                0.21
-            case .walking:
-                0.23
-            case .strengthTraining:
-                0.39
+//            case .biking:
+//                0.22
+//            case .jogging:
+//                0.21
+//            case .walking:
+//                0.23
+            case .low:
+                1.00
+//            case .strengthTraining:
+//                0.39
             }
         }
         

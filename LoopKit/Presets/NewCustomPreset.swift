@@ -45,6 +45,7 @@ public struct NewCustomPreset {
     public var duration: PresetDuration?
     public var startDate: Date?
     public var repeatOptions: PresetScheduleRepeatOptions
+    public var autoStartScheduledPreset: Bool
 
     public init(
         savePreset: Bool = true,
@@ -53,7 +54,8 @@ public struct NewCustomPreset {
         name: String = "",
         duration: PresetDuration? = nil,
         startDate: Date? = nil,
-        repeatOptions: PresetScheduleRepeatOptions = .none
+        repeatOptions: PresetScheduleRepeatOptions = .none,
+        autoStartScheduledPreset: Bool = false
     ) {
         self.savePreset = savePreset
         self.insulinMultiplier = insulinMultiplier
@@ -62,6 +64,7 @@ public struct NewCustomPreset {
         self.duration = duration
         self.startDate = startDate
         self.repeatOptions = repeatOptions
+        self.autoStartScheduledPreset = autoStartScheduledPreset
     }
 
     public var veryHighInsulinNeeds: Bool {
@@ -139,7 +142,8 @@ public extension NewCustomPreset {
             settings: settings,
             duration: overrideDuration,
             scheduleStartDate: startDate,
-            repeatOptions: repeatOptions
+            repeatOptions: repeatOptions,
+            autoStartScheduledPreset: autoStartScheduledPreset
         )
     }
 }

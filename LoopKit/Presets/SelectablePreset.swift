@@ -265,6 +265,36 @@ public enum SelectablePreset: Hashable, Identifiable {
             }
         }
     }
+    
+    public var autoStartScheduledPreset: Bool {
+        get {
+            switch self {
+            case .custom(let preset):
+                return preset.autoStartScheduledPreset
+
+            case .activity(let activity):
+                return activity.preset.autoStartScheduledPreset
+
+            case .preMeal:
+                return false
+            }
+        }
+
+        set {
+            switch self {
+            case .custom(var preset):
+                preset.autoStartScheduledPreset = newValue
+                self = .custom(preset)
+
+            case .activity(var activity):
+                activity.preset.autoStartScheduledPreset = newValue
+                self = .activity(activity)
+
+            case .preMeal:
+                break
+            }
+        }
+    }
 
 
     public var name: String {

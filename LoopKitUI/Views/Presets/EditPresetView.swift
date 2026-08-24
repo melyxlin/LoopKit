@@ -369,6 +369,35 @@ public struct EditPresetView: View {
             
             if preset.isScheduled {
                 Divider()
+
+                   HStack {
+                       VStack(alignment: .leading, spacing: 2) {
+                           Text("Automatically Start")
+                               .foregroundColor(.primary)
+
+                           Text("Start this preset automatically at its scheduled time.")
+                               .font(.caption)
+                               .foregroundColor(.secondary)
+                       }
+
+                       Spacer()
+
+                       Toggle(
+                           "",
+                           isOn: Binding(
+                               get: {
+                                   preset.autoStartScheduledPreset
+                               },
+                               set: { newValue in
+                                   preset.autoStartScheduledPreset = newValue
+                               }
+                           )
+                       )
+                       .toggleStyle(SwitchToggleStyle(tint: .green))
+                       .labelsHidden()
+                   }
+
+                Divider()
                 HStack {
                     if preset.repeatOptions != .none {
                         Text("Next Date")
