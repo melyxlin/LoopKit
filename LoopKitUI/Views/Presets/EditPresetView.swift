@@ -337,109 +337,123 @@ public struct EditPresetView: View {
     }
 
     private func schedulingCard(_ proxy: ScrollViewProxy) -> some View {
-        CardSection(content:  {
+        CardSection(content: {
             HStack {
                 Text("Schedule")
                     .font(.body)
-                
+
                 Spacer()
-                
-                Toggle("", isOn: Binding(get: {
-                    return preset.isScheduled
-                }, set: { newValue in
-                    withAnimation {
-                        if newValue {
-                            preset.scheduleStartDate = Date().addingTimeInterval(.hours(1))
-                            Task {
-                                try? await Task.sleep(nanoseconds: 200_000_000) // ~0.2s delay
-                                withAnimation {
-                                    proxy.scrollTo("repeatOption", anchor: .bottom)
-                                }
+
+                Toggle(
+                    "",
+                    isOn: Binding(
+                        get: {
+                            preset.isScheduled
+                        },
+                        set: { newValue in
+                            if newValue {
+                                preset.scheduleStartDate =
+                                    Date().addingTimeInterval(.hours(1))
+                            } else {
+                                preset.scheduleStartDate = nil
+                                preset.repeatOptions = .none
+                                preset.autoStartScheduledPreset = false
                             }
-                        } else {
-                            preset.scheduleStartDate = nil
-                            preset.repeatOptions = .none
                         }
-                    }
-                }))
+                    )
+                )
                 .toggleStyle(SwitchToggleStyle(tint: .green))
                 .labelsHidden()
                 .padding(.vertical, -4)
             }
-            
+
             if preset.isScheduled {
                 Divider()
 
-                   HStack {
-                       VStack(alignment: .leading, spacing: 2) {
-                           Text("Automatically Start")
-                               .foregroundColor(.primary)
+                HStack {
+                    Text("Auto Start")
 
-                           Text("Start this preset automatically at its scheduled time.")
-                               .font(.caption)
-                               .foregroundColor(.secondary)
-                       }
+                    Spacer()
 
-                       Spacer()
-
-                       Toggle(
-                           "",
-                           isOn: Binding(
-                               get: {
-                                   preset.autoStartScheduledPreset
-                               },
-                               set: { newValue in
-                                   preset.autoStartScheduledPreset = newValue
-                               }
-                           )
-                       )
-                       .toggleStyle(SwitchToggleStyle(tint: .green))
-                       .labelsHidden()
-                   }
+                    Toggle(
+                        "",
+                        isOn: Binding(
+                            get: {
+                                preset.autoStartScheduledPreset
+                            },
+                            set: { newValue in
+                                preset.autoStartScheduledPreset = newValue
+                            }
+                        )
+                    )
+                    .toggleStyle(SwitchToggleStyle(tint: .green))
+                    .labelsHidden()
+                }
 
                 Divider()
-                HStack {
-                    if preset.repeatOptions != .none {
-                        Text("Next Date")
-                    } else {
-                        Text("Start Date")
-                    }
-                    Spacer()
-                    DatePicker(
-                        "",
-                        selection: Binding(get: {
+
+                DatePicker(
+                    preset.repeatOptions != .none
+                        ? "Next Date"
+                        : "Start Date",
+                    selection: Binding(
+                        get: {
                             preset.nextScheduledStartAfter(Date()) ?? Date()
-                        }, set: { newValue in
+                        },
+                        set: { newValue in
                             preset.scheduleStartDate = newValue
-                        }),
-                        in: Date().addingTimeInterval(.minutes(1))...,
-                        displayedComponents: [.date, .hourAndMinute]
-                    )
-                }
+                        }
+                    ),
+                    in: Date().addingTimeInterval(.minutes(1))...,
+                    displayedComponents: [.date, .hourAndMinute]
+                )
+                .datePickerStyle(.compact)
+
                 Divider()
                     .padding(.top, -4)
+
                 HStack {
                     Text("Repeat")
+
                     Spacer()
-                    Picker("Repeat", selection: Binding<RepeatOption>(
-                        get: { preset.repeatOptions == .none ? .never : .weekly },
-                        set: { newValue in
-                            if newValue == .never {
-                                preset.repeatOptions = .none
-                            } else {
-                                Task {
-                                    if let requiredRepeatOption {
-                                        preset.repeatOptions = requiredRepeatOption
-                                    }
-                                    try? await Task.sleep(nanoseconds: 200_000_000) // ~0.2s delay
-                                    withAnimation {
-                                        proxy.scrollTo("selectedDays", anchor: .bottom)
+
+                    Picker(
+                        "Repeat",
+                        selection: Binding<RepeatOption>(
+                            get: {
+                                preset.repeatOptions == .none
+                                    ? .never
+                                    : .weekly
+                            },
+                            set: { newValue in
+                                if newValue == .never {
+                                    preset.repeatOptions = .none
+                                } else {
+                                    Task {
+                                        if let requiredRepeatOption {
+                                            preset.repeatOptions =
+                                                requiredRepeatOption
+                                        }
+
+                                        try? await Task.sleep(
+                                            nanoseconds: 200_000_000
+                                        )
+
+                                        withAnimation {
+                                            proxy.scrollTo(
+                                                "selectedDays",
+                                                anchor: .bottom
+                                            )
+                                        }
                                     }
                                 }
                             }
-                        }
-                    ).animation()) {
-                        ForEach(RepeatOption.allCases, id: \.self) { option in
+                        ).animation()
+                    ) {
+                        ForEach(
+                            RepeatOption.allCases,
+                            id: \.self
+                        ) { option in
                             Text(String(describing: option))
                         }
                     }
@@ -447,37 +461,51 @@ public struct EditPresetView: View {
                     .pickerStyle(MenuPickerStyle())
                     .padding(.trailing, -8)
                 }
-                .id("repeatOption") // Assign an ID for scrolling
-                
-                
+                .id("repeatOption")
+
                 if preset.repeatOptions != .none {
                     Divider()
                         .padding(.top, -4)
+
                     HStack {
                         Text("Selected days")
                             .foregroundColor(.primary)
+
                         HStack {
                             Spacer()
-                            RepeatOptionView(repeatOptions: preset.repeatOptions)
-                                .padding(.vertical, 6)
-                                .onTapGesture {
-                                    withAnimation {
-                                        showingDayPicker = true
-                                    }
+
+                            RepeatOptionView(
+                                repeatOptions: preset.repeatOptions
+                            )
+                            .padding(.vertical, 6)
+                            .onTapGesture {
+                                withAnimation {
+                                    showingDayPicker = true
                                 }
+                            }
                         }
-                        .popover(isPresented: $showingDayPicker, arrowEdge: .bottom) {
-                            DayPickerPopup(selectedDays: Binding(
-                                get: {
-                                    preset.repeatOptions
-                                }, set: { newValue in
-                                    preset.repeatOptions = newValue.union(requiredRepeatOption ?? .none)
-                                }))
+                        .popover(
+                            isPresented: $showingDayPicker,
+                            arrowEdge: .bottom
+                        ) {
+                            DayPickerPopup(
+                                selectedDays: Binding(
+                                    get: {
+                                        preset.repeatOptions
+                                    },
+                                    set: { newValue in
+                                        preset.repeatOptions =
+                                            newValue.union(
+                                                requiredRepeatOption ?? .none
+                                            )
+                                    }
+                                )
+                            )
                             .cornerRadius(12)
                             .presentationCompactAdaptation(.popover)
                         }
                     }
-                    .id("selectedDays") // Assign an ID for scrolling
+                    .id("selectedDays")
                 }
             }
         }, footerText: scheduleFooter)

@@ -168,24 +168,33 @@ struct CreatePresetNameAndScheduledEdit: View {
 
                     if preset.startDate != nil {
                         Divider()
-                        HStack {
-                            if selectedRepeatOption == .never {
-                                Text("Date")
-                            } else {
-                                Text("Start Date")
+
+                            HStack {
+                                Text("Auto Start")
+
+                                Spacer()
+
+                                Toggle("", isOn: $preset.autoStartScheduledPreset)
+                                    .toggleStyle(SwitchToggleStyle(tint: .green))
+                                    .labelsHidden()
                             }
-                            Spacer()
+
+                            Divider()
+
                             DatePicker(
-                                "",
-                                selection: Binding(get: {
-                                    preset.startDate ?? Date()
-                                }, set: { newValue in
-                                    preset.startDate = newValue
-                                }),
+                                selectedRepeatOption == .never ? "Date" : "Start Date",
+                                selection: Binding(
+                                    get: {
+                                        preset.startDate ?? Date()
+                                    },
+                                    set: { newValue in
+                                        preset.startDate = newValue
+                                    }
+                                ),
                                 in: Date()...,
                                 displayedComponents: [.date, .hourAndMinute]
                             )
-                        }
+                            .datePickerStyle(.compact)
                         Divider()
                             .padding(.top, -4)
                         HStack {

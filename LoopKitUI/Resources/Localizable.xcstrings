@@ -6051,7 +6051,7 @@
         }
       }
     },
-    "Automatically Start" : {
+    "Auto Start" : {
 
     },
     "Back" : {
@@ -26077,9 +26077,6 @@
 
     },
     "Start Preset" : {
-
-    },
-    "Start this preset automatically at its scheduled time." : {
 
     },
     "Start Time" : {
