@@ -83,7 +83,7 @@ public struct ActivityPreset: Hashable, Identifiable, Sendable, RawRepresentable
         }
         
         public var completeDefaultPreset: TemporaryPreset {
-            defaultPreset(duration: .finite(.minutes(90)), scheduleStartDate: nil, repeatOptions: .none)
+            defaultPreset(duration: .finite(.minutes(60)), scheduleStartDate: nil, repeatOptions: .none)
         }
         
         public func defaultPreset(duration: TemporaryScheduleOverride.Duration, scheduleStartDate: Date?, repeatOptions: PresetScheduleRepeatOptions) -> TemporaryPreset {

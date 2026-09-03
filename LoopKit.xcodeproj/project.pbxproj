@@ -851,6 +851,13 @@
 		C1FAEC1D264AD6B400A3250B /* DeviceStatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FAEC1C264AD6B400A3250B /* DeviceStatusBadge.swift */; };
 		C1FAEC1F264AE12700A3250B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47ECF8725DC20810024A54D /* UIImage.swift */; };
 		C1FAEC21264AEEA300A3250B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FAEC20264AEEA300A3250B /* UIImage.swift */; };
+		DD13BC702C3C71A70062313B /* BasalLockEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD13BC6F2C3C71A70062313B /* BasalLockEditor.swift */; };
+		DD13BC722C3C74CD0062313B /* PreferencesGuardrailWarning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD13BC712C3C74CD0062313B /* PreferencesGuardrailWarning.swift */; };
+		DD28B3712B80C074001044D4 /* PreferencesSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28B3702B80C074001044D4 /* PreferencesSetting.swift */; };
+		DD545A5B2B80ECB900915F95 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD545A5A2B80ECB900915F95 /* PreferencesView.swift */; };
+		DD545A5F2B80EFA900915F95 /* PreferencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD545A5E2B80EFA900915F95 /* PreferencesViewModel.swift */; };
+		DD545A652B814CA800915F95 /* PreferencesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD545A642B814CA800915F95 /* PreferencesProvider.swift */; };
+		DD545A692B8BCF8E00915F95 /* Guardrail+Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD545A682B8BCF8E00915F95 /* Guardrail+Preferences.swift */; };
 		E0E99C342C0E7AD300F9300C /* ConfirmationToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E99C332C0E7AD300F9300C /* ConfirmationToggle.swift */; };
 		E0E99C392C0E80C200F9300C /* LoopCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E99C382C0E80C200F9300C /* LoopCircleView.swift */; };
 		E9077D2724ACD59F0066A88D /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9077D2624ACD59F0066A88D /* InformationView.swift */; };
@@ -1768,6 +1775,13 @@
 		C1FAC06228C7B0A100754AE2 /* reservoir_iob_test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reservoir_iob_test.json; sourceTree = "<group>"; };
 		C1FAEC1C264AD6B400A3250B /* DeviceStatusBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatusBadge.swift; sourceTree = "<group>"; };
 		C1FAEC20264AEEA300A3250B /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		DD13BC6F2C3C71A70062313B /* BasalLockEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalLockEditor.swift; sourceTree = "<group>"; };
+		DD13BC712C3C74CD0062313B /* PreferencesGuardrailWarning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesGuardrailWarning.swift; sourceTree = "<group>"; };
+		DD28B3702B80C074001044D4 /* PreferencesSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesSetting.swift; sourceTree = "<group>"; };
+		DD545A5A2B80ECB900915F95 /* PreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		DD545A5E2B80EFA900915F95 /* PreferencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewModel.swift; sourceTree = "<group>"; };
+		DD545A642B814CA800915F95 /* PreferencesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesProvider.swift; sourceTree = "<group>"; };
+		DD545A682B8BCF8E00915F95 /* Guardrail+Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Guardrail+Preferences.swift"; sourceTree = "<group>"; };
 		E0E99C332C0E7AD300F9300C /* ConfirmationToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationToggle.swift; sourceTree = "<group>"; };
 		E0E99C382C0E80C200F9300C /* LoopCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopCircleView.swift; sourceTree = "<group>"; };
 		E9077D2624ACD59F0066A88D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
@@ -2052,6 +2066,7 @@
 			isa = PBXGroup;
 			children = (
 				B4C004B2241085DB00B40429 /* ActionButton.swift */,
+				DD545A592B80EC9500915F95 /* Preferences Editors */,
 				89AF78C524482268002B4FCC /* ActionButtonStyle.swift */,
 				C1E4B307242E995200E70CCB /* ActivityIndicator.swift */,
 				89BE75CA2464BC2000B145D9 /* AlertContent.swift */,
@@ -2227,6 +2242,7 @@
 				C187338229B9486200519CDF /* TimeInterval.swift */,
 				C187339629B9488300519CDF /* TimeZone.swift */,
 				C187339729B9488300519CDF /* UUID.swift */,
+				DD545A682B8BCF8E00915F95 /* Guardrail+Preferences.swift */,
 				842E40282F22D8C6000CCCE0 /* Character+IsEmoji.swift */,
 			);
 			path = Extensions;
@@ -2433,6 +2449,8 @@
 				C1814B8B226371DF008D2D8E /* WeakSynchronizedDelegate.swift */,
 				43CACE0D2247F89100F90AF5 /* WeakSynchronizedSet.swift */,
 				B4A2ABEE2AAB5160007E3EC1 /* Pluggable.swift */,
+				DD28B3702B80C074001044D4 /* PreferencesSetting.swift */,
+				DD545A642B814CA800915F95 /* PreferencesProvider.swift */,
 				840A2F102C0F9882003D5E90 /* LoopCompletionFreshness.swift */,
 			);
 			path = LoopKit;
@@ -2935,6 +2953,7 @@
 			isa = PBXGroup;
 			children = (
 				C10759A12E4E3F2900EFF99A /* Environment+FeatureFlags.swift */,
+				DD545A5E2B80EFA900915F95 /* PreferencesViewModel.swift */,
 				B455F3A325FF7FF0000ED456 /* CorrectionRangeOverridesEditorViewModel.swift */,
 				B4B7C1BB2604E3FC007379F6 /* CorrectionRangeScheduleEditorViewModel.swift */,
 				B4D4C20C25F95A8700DA809D /* DisplayGlucosePreference.swift */,
@@ -3054,6 +3073,16 @@
 				B66D1F512E6A603D00471149 /* Localizable.xcstrings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD545A592B80EC9500915F95 /* Preferences Editors */ = {
+			isa = PBXGroup;
+			children = (
+				DD545A5A2B80ECB900915F95 /* PreferencesView.swift */,
+				DD13BC6F2C3C71A70062313B /* BasalLockEditor.swift */,
+				DD13BC712C3C74CD0062313B /* PreferencesGuardrailWarning.swift */,
+			);
+			path = "Preferences Editors";
 			sourceTree = "<group>";
 		};
 		E9077D2824ACD5AA0066A88D /* Information Screens */ = {
@@ -3782,6 +3811,7 @@
 				842E404B2F22EAD8000CCCE0 /* EditPresetView.swift in Sources */,
 				A9D3FF0B2A6C198C000C891D /* CGPoint.swift in Sources */,
 				B429D66E24BF7255003E1B4A /* UIImage.swift in Sources */,
+				DD13BC722C3C74CD0062313B /* PreferencesGuardrailWarning.swift in Sources */,
 				B46B62A923FF05F8001E69BA /* LabeledNumberInput.swift in Sources */,
 				842E40502F22ED57000CCCE0 /* ExistingPresetInsulinNeedsEdit.swift in Sources */,
 				892155152245C57E009112BC /* SegmentedGaugeBarLayer.swift in Sources */,
@@ -3827,6 +3857,7 @@
 				A9D3FF042A6C1944000C891D /* PredictedGlucoseChart.swift in Sources */,
 				C1DE4C2125A253BD007065F8 /* Color.swift in Sources */,
 				898E6E702241EDB70019E459 /* PercentageTextFieldTableViewController.swift in Sources */,
+				DD13BC702C3C71A70062313B /* BasalLockEditor.swift in Sources */,
 				89CAB36D24C9EC98009EE3CE /* Keyboard.swift in Sources */,
 				89186C0724BF7FC70003D0F3 /* Guardrail+UI.swift in Sources */,
 				84EE97B32D7A59AE00D5E941 /* ManualBolusDoseChartLayer.swift in Sources */,
@@ -3885,6 +3916,7 @@
 				B46B62B323FF0E62001E69BA /* SelectableLabel.swift in Sources */,
 				89FC6893245A2D680075CF59 /* ScheduleItemView.swift in Sources */,
 				43BA716F201E49220058961E /* FoodEmojiDataSource.swift in Sources */,
+				DD545A5F2B80EFA900915F95 /* PreferencesViewModel.swift in Sources */,
 				E9077D2724ACD59F0066A88D /* InformationView.swift in Sources */,
 				E94141D024C8F31C0096C326 /* DeliveryLimitsEditor.swift in Sources */,
 				1452F4BA2A85266500F8B9E4 /* CarbQuantityRow.swift in Sources */,
@@ -3954,6 +3986,7 @@
 				43BA717D201EE7090058961E /* GlucoseRangeTableViewCell.swift in Sources */,
 				B455F3A425FF7FF0000ED456 /* CorrectionRangeOverridesEditorViewModel.swift in Sources */,
 				A9D3FF002A6C1944000C891D /* ChartConstants.swift in Sources */,
+				DD545A5B2B80ECB900915F95 /* PreferencesView.swift in Sources */,
 				89BE75CB2464BC2000B145D9 /* AlertContent.swift in Sources */,
 				43BA7184201EE7090058961E /* TextFieldTableViewController.swift in Sources */,
 				1452F4B22A8521CD00F8B9E4 /* TextFieldRow.swift in Sources */,
@@ -4045,6 +4078,7 @@
 				89AE222F228BC68000BDFD85 /* DoseProgressTimerEstimator.swift in Sources */,
 				43D8FDF61C7290350073BE78 /* DailyQuantitySchedule.swift in Sources */,
 				43D8FDF51C7290350073BE78 /* CarbRatioSchedule.swift in Sources */,
+				DD545A652B814CA800915F95 /* PreferencesProvider.swift in Sources */,
 				89AE222C228BC66E00BDFD85 /* Locked.swift in Sources */,
 				432CF87120D76D5A0066B889 /* GlucoseDisplayable.swift in Sources */,
 				A919889F2355016B00B75EEE /* DosingDecisionStore.swift in Sources */,
@@ -4110,7 +4144,9 @@
 				840A2DD32E399BD400D4E245 /* Modelv5ToModelv6.xcmappingmodel in Sources */,
 				433BC7A720523DB7000B1200 /* NewGlucoseSample.swift in Sources */,
 				4322B78E202FA2B30002837D /* InsulinMath.swift in Sources */,
+				DD28B3712B80C074001044D4 /* PreferencesSetting.swift in Sources */,
 				840A2D822E39649500D4E245 /* ModelMappingv4v5Tov6Policy.swift in Sources */,
+				DD545A692B8BCF8E00915F95 /* Guardrail+Preferences.swift in Sources */,
 				C17F39D023CE34B100FA1113 /* StoredDeviceLogEntry.swift in Sources */,
 				43B17C89208EEC0B00AC27E9 /* HealthStoreUnitCache.swift in Sources */,
 				A912BE29245B9CD500CBE199 /* SettingsObject+CoreDataClass.swift in Sources */,

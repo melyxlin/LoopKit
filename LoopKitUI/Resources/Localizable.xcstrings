@@ -6051,6 +6051,9 @@
         }
       }
     },
+    "Authentication is required to save this setting." : {
+      "comment" : "Authentication challenge description for basal lock threshold"
+    },
     "Auto Start" : {
 
     },
@@ -6202,6 +6205,12 @@
           }
         }
       }
+    },
+    "Basal Lock prevents the basal rate from being throttled if the blood glucose is above a certain level." : {
+      "comment" : "Description for basal lock threshold setting"
+    },
+    "Basal Lock Threshold" : {
+      "comment" : "Title for basal lock threshold setting"
     },
     "Basal Rates" : {
       "comment" : "Title text for multi-value basal rate warning",
@@ -12479,6 +12488,9 @@
           }
         }
       }
+    },
+    "Enable Basal Lock" : {
+
     },
     "Enable Indefinitely" : {
       "comment" : "The text for the indefinite custom preset duration setting",
@@ -20565,6 +20577,9 @@
     "of scheduled" : {
 
     },
+    "Off" : {
+
+    },
     "OK" : {
 
     },
@@ -23872,7 +23887,7 @@
 
     },
     "Save" : {
-      "comment" : "Button text for saving glucose correction range schedule\nButton text for saving insulin sensitivity schedule\nThe button text for saving on a configuration page",
+      "comment" : "Button text for saving glucose correction range schedule\nButton text for saving insulin sensitivity schedule\nSave button title\nThe button text for saving on a configuration page",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -24010,6 +24025,9 @@
     },
     "Save and Schedule for Later" : {
 
+    },
+    "Save Basal Lock Threshold?" : {
+      "comment" : "Alert title for confirming a basal lock threshold outside the recommended range"
     },
     "Save Basal Rates?" : {
       "comment" : "Alert title for confirming basal rates outside the recommended range",
@@ -35592,6 +35610,9 @@
           }
         }
       }
+    },
+    "Your setting for basal lock is outside the recommended range." : {
+      "comment" : "Descriptive text for saving settings outside the recommended range for basal lock"
     }
   },
   "version" : "1.1"
