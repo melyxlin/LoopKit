@@ -80,7 +80,7 @@ extension FavoriteFoodListRow {
         VStack(alignment: .leading, spacing: 6) {
             Text(food.title)
             
-            Text("\(food.carbsString(formatter: carbFormatter)) carbs, \(food.absorptionTimeString(formatter: absorptionTimeFormatter)) absorption")
+            Text(macroSummary)
                 .font(.footnote)
         }
         .foregroundColor(.primary)
@@ -106,6 +106,22 @@ extension FavoriteFoodListRow {
         }
         .frame(width: isEditing ? isConfirmingDelete ? 72 : 45 : 0, alignment: .trailing)
         .contentShape(Rectangle())
+    }
+    
+    private var macroSummary: String {
+        let carbs = food.carbsQuantity.doubleValue(for: preferredCarbUnit)
+        let protein = food.protein ?? 0
+        let fat = food.fat ?? 0
+        let absorption = food.absorptionTimeString(
+            formatter: absorptionTimeFormatter
+        )
+
+        return String(
+            format: "%.0fg C • %.0fg P • %.0fg F",
+            carbs,
+            protein,
+            fat
+        )
     }
     
     private var disclosure: some View {
