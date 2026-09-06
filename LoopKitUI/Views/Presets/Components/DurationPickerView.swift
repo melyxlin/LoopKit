@@ -15,7 +15,7 @@ public struct DurationPickerView: View {
     @State private var allowIndefinite: Bool
 
     // Available values (respecting min 5min and max 8hr constraints)
-    private let availableHours = Array(0...8)
+    private let availableHours = Array(0...24)
     private let availableMinutes = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
 
     public init(durationType: Binding<PresetDuration>, allowIndefinite: Bool = true) {
@@ -150,9 +150,9 @@ public struct DurationPickerView: View {
             if lastUsedDuration < 300 { // Less than 5 minutes
                 lastUsedDuration = 300
                 durationType = .duration(300)
-            } else if lastUsedDuration > 28800 { // More than 8 hours
-                lastUsedDuration = 28800
-                durationType = .duration(28800)
+            } else if lastUsedDuration > 86400 { // More than 24 hours
+                lastUsedDuration = 86400
+                durationType = .duration(86400 )
             } else {
                 durationType = .duration(lastUsedDuration)
             }
