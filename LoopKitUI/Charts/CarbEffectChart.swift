@@ -105,6 +105,10 @@ extension CarbEffectChart {
             axisValuesY: yAxisValues
         )
 
+        let currentTimeValue = ChartAxisValueDate(date: Date(), formatter: { _ in "" })
+        let currentTimeSettings = ChartGuideLinesLayerSettings(linesColor: colors.carbTint, linesWidth: 1.0)
+        let currentTimeLayer = ChartGuideLinesForValuesLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, settings: currentTimeSettings, axisValuesX: [currentTimeValue], axisValuesY: [])
+
         // 0-line
         let dummyZeroChartPoint = ChartPoint(x: ChartAxisValueDouble(0), y: ChartAxisValueDouble(0))
         let zeroGuidelineLayer = ChartPointsViewsLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, chartPoints: [dummyZeroChartPoint], viewGenerator: {(chartPointModel, layer, chart) -> UIView? in
@@ -130,6 +134,7 @@ extension CarbEffectChart {
 
         let layers: [ChartLayer?] = [
             gridLayer,
+            currentTimeLayer,
             xAxisLayer,
             yAxisLayer,
             zeroGuidelineLayer,

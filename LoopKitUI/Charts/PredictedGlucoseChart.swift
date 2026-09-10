@@ -125,6 +125,10 @@ extension PredictedGlucoseChart {
         // Grid lines
         let gridLayer = ChartGuideLinesForValuesLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, settings: guideLinesLayerSettings, axisValuesX: Array(xAxisValues.dropFirst().dropLast()), axisValuesY: yAxisValues)
 
+        let currentTimeValue = ChartAxisValueDate(date: Date(), formatter: { _ in "" })
+        let currentTimeSettings = ChartGuideLinesLayerSettings(linesColor: colors.glucoseTint, linesWidth: 1.0)
+        let currentTimeLayer = ChartGuideLinesForValuesLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, settings: currentTimeSettings, axisValuesX: [currentTimeValue], axisValuesY: [])
+
         let circles = GlucoseHistoryLayer(xAxis: xAxisLayer.axis, yAxis: yAxisLayer.axis, chartPoints: glucosePoints, displayDelay: 0, itemSize: CGSize(width: 4, height: 4), currentItemSize: CGSize(width: 8, height: 8), itemFillColor: colors.glucoseTint)
 
         var alternatePrediction: ChartLayer?
@@ -164,6 +168,7 @@ extension PredictedGlucoseChart {
 
         let layers: [ChartLayer?] = [
             gridLayer,
+            currentTimeLayer,
             targetsLayer,
             xAxisLayer,
             yAxisLayer,
