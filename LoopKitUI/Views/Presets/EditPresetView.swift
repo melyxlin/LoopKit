@@ -173,6 +173,21 @@ public struct EditPresetView: View {
                             )
                         }.accessibilityIdentifier("button_CorrectionRange")
                     }
+
+                    if !preset.isPreMeal {
+                        CardSection {
+                            Toggle(isOn: $preset.limitAutomaticDosing) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Limit Automatic Dosing")
+
+                                    Text("Prevents automatic insulin increases while this preset is active. Automatic insulin reductions and suspensions are still allowed.")
+                                        .font(.footnote)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .disabled(!trainingCompletion.isComplete)
+                        }
+                    }
                     
                     if let activityPresetIsModified {
                         Group {

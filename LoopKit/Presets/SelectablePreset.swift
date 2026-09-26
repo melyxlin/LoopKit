@@ -176,7 +176,11 @@ public enum SelectablePreset: Hashable, Identifiable {
             case .preMeal(let range):
                 self = .preMeal(range: range)
             case .activity(var activity):
-                activity.preset.settings = TemporaryPresetSettings(targetRange: activity.preset.settings.targetRange, insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor)
+                activity.preset.settings = TemporaryPresetSettings(
+                    targetRange: activity.preset.settings.targetRange,
+                    insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor,
+                    limitAutomaticDosing: activity.preset.settings.limitAutomaticDosing
+                )
                 switch newValue {
                 case .indefinite:
                     activity.preset.duration = .indefinite
@@ -187,7 +191,11 @@ public enum SelectablePreset: Hashable, Identifiable {
                 }
                 self = .activity(activity)
             case .custom(var preset):
-                preset.settings = TemporaryPresetSettings(targetRange: preset.settings.targetRange, insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor)
+                preset.settings = TemporaryPresetSettings(
+                    targetRange: preset.settings.targetRange,
+                    insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor,
+                    limitAutomaticDosing: preset.settings.limitAutomaticDosing
+                )
                 switch newValue {
                 case .indefinite:
                     preset.duration = .indefinite
@@ -327,10 +335,18 @@ public enum SelectablePreset: Hashable, Identifiable {
             case .preMeal:
                 self = .preMeal(range: newValue!)
             case .activity(var activity):
-                activity.preset.settings = TemporaryPresetSettings(targetRange: newValue, insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor)
+                activity.preset.settings = TemporaryPresetSettings(
+                    targetRange: newValue,
+                    insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor,
+                    limitAutomaticDosing: activity.preset.settings.limitAutomaticDosing
+                )
                 self = .activity(activity)
             case .custom(var preset):
-                preset.settings = TemporaryPresetSettings(targetRange: newValue, insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor)
+                preset.settings = TemporaryPresetSettings(
+                    targetRange: newValue,
+                    insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor,
+                    limitAutomaticDosing: preset.settings.limitAutomaticDosing
+                )
                 self = .custom(preset)
             }
         }
@@ -358,11 +374,54 @@ public enum SelectablePreset: Hashable, Identifiable {
         }
         set {
             if case .activity(var activity) = self {
-                activity.preset.settings = TemporaryPresetSettings(targetRange: activity.preset.settings.targetRange, insulinNeedsScaleFactor: newValue)
+                activity.preset.settings = TemporaryPresetSettings(
+                    targetRange: activity.preset.settings.targetRange,
+                    insulinNeedsScaleFactor: newValue,
+                    limitAutomaticDosing: activity.preset.settings.limitAutomaticDosing
+                )
                 self = .activity(activity)
             } else if case .custom(var preset) = self {
-                preset.settings = TemporaryPresetSettings(targetRange: preset.settings.targetRange, insulinNeedsScaleFactor: newValue)
+                preset.settings = TemporaryPresetSettings(
+                    targetRange: preset.settings.targetRange,
+                    insulinNeedsScaleFactor: newValue,
+                    limitAutomaticDosing: preset.settings.limitAutomaticDosing
+                )
                 self = .custom(preset)
+            }
+        }
+    }
+
+    public var limitAutomaticDosing: Bool {
+        get {
+            switch self {
+            case .custom(let preset):
+                return preset.settings.limitAutomaticDosing
+            case .activity(let activity):
+                return activity.preset.settings.limitAutomaticDosing
+            case .preMeal:
+                return false
+            }
+        }
+        set {
+            switch self {
+            case .activity(var activity):
+                activity.preset.settings = TemporaryPresetSettings(
+                    targetRange: activity.preset.settings.targetRange,
+                    insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor,
+                    limitAutomaticDosing: newValue
+                )
+                self = .activity(activity)
+
+            case .custom(var preset):
+                preset.settings = TemporaryPresetSettings(
+                    targetRange: preset.settings.targetRange,
+                    insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor,
+                    limitAutomaticDosing: newValue
+                )
+                self = .custom(preset)
+
+            case .preMeal:
+                break
             }
         }
     }

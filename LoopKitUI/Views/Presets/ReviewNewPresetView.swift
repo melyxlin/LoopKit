@@ -66,6 +66,17 @@ struct ReviewNewPresetView: View {
                 )
             }
 
+            if preset.limitAutomaticDosing {
+                CardSection {
+                    HStack {
+                        Text("Limit Automatic Dosing")
+                        Spacer()
+                        Text("On")
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+
             // Name Field
             if preset.savePreset {
                 CardSection {

@@ -153,8 +153,10 @@ extension TherapySettingsViewModel {
                         targetRange: ClosedRange<LoopQuantity>.init(
                             uncheckedBounds: (
                                 lower: max(quantity, targetRange.lowerBound),
-                                upper:  max(quantity, targetRange.upperBound))),
-                        insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor)
+                                upper: max(quantity, targetRange.upperBound))),
+                        insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor,
+                        limitAutomaticDosing: preset.settings.limitAutomaticDosing
+                    )
                     return newPreset
                 } else {
                     return preset

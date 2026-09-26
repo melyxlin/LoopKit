@@ -82,6 +82,18 @@ struct CreatePresetNameAndScheduledEdit: View {
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 10)
 
+            CardSection {
+                Toggle(isOn: $preset.limitAutomaticDosing) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Limit Automatic Dosing")
+
+                        Text("Prevents automatic insulin increases while this preset is active. Automatic insulin reductions and suspensions are still allowed.")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+
             // Name Field
             if preset.savePreset {
                 CardSection {

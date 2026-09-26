@@ -723,6 +723,76 @@ extension TemporaryScheduleOverride {
     }
 }
 
+class TemporaryPresetSettingsPersistenceTests: XCTestCase {
+    func testLimitAutomaticDosingDefaultsToFalse() {
+        let settings = TemporaryPresetSettings(
+            targetRange: nil
+        )
+
+        XCTAssertFalse(settings.limitAutomaticDosing)
+    }
+
+    func testCodableWithoutLimitAutomaticDosingDefaultsToFalse() throws {
+        let json = """
+        {
+          "insulinNeedsScaleFactor" : 1.2
+        }
+        """
+
+        let settings = try JSONDecoder().decode(
+            TemporaryPresetSettings.self,
+            from: Data(json.utf8)
+        )
+
+        XCTAssertEqual(settings.insulinNeedsScaleFactor, 1.2)
+        XCTAssertFalse(settings.limitAutomaticDosing)
+    }
+
+    func testCodableLimitAutomaticDosingRoundTrip() throws {
+        let original = TemporaryPresetSettings(
+            targetRange: nil,
+            insulinNeedsScaleFactor: 1.2,
+            limitAutomaticDosing: true
+        )
+
+        let data = try JSONEncoder().encode(original)
+        let decoded = try JSONDecoder().decode(
+            TemporaryPresetSettings.self,
+            from: data
+        )
+
+        XCTAssertEqual(decoded, original)
+        XCTAssertTrue(decoded.limitAutomaticDosing)
+    }
+
+    func testRawValueWithoutLimitAutomaticDosingDefaultsToFalse() {
+        let rawValue: TemporaryPresetSettings.RawValue = [
+            "insulinNeedsScaleFactor": 1.2,
+            "version": 1
+        ]
+
+        let settings = TemporaryPresetSettings(rawValue: rawValue)
+
+        XCTAssertNotNil(settings)
+        XCTAssertEqual(settings?.insulinNeedsScaleFactor, 1.2)
+        XCTAssertFalse(settings?.limitAutomaticDosing ?? true)
+    }
+
+    func testRawValueLimitAutomaticDosingRoundTrip() {
+        let original = TemporaryPresetSettings(
+            targetRange: nil,
+            insulinNeedsScaleFactor: 1.2,
+            limitAutomaticDosing: true
+        )
+
+        let decoded = TemporaryPresetSettings(rawValue: original.rawValue)
+
+        XCTAssertNotNil(decoded)
+        XCTAssertEqual(decoded, original)
+        XCTAssertTrue(decoded?.limitAutomaticDosing ?? false)
+    }
+}
+
 class TemporaryScheduleOverrideContextCodableTests: XCTestCase {
     func testCodablePreMeal() throws {
         try assertTemporaryScheduleOverrideContextCodable(.preMeal, encodesJSON: """

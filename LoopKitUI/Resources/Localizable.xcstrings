@@ -17180,6 +17180,9 @@
         }
       }
     },
+    "Limit Automatic Dosing" : {
+
+    },
     "Load" : {
 
     },
@@ -20584,6 +20587,9 @@
     "OK" : {
 
     },
+    "On" : {
+
+    },
     "or" : {
 
     },
@@ -22075,6 +22081,9 @@
           }
         }
       }
+    },
+    "Prevents automatic insulin increases while this preset is active. Automatic insulin reductions and suspensions are still allowed." : {
+
     },
     "Profile Name" : {
 
