@@ -13,10 +13,22 @@ import LoopAlgorithm
 public struct CGMManagerDescriptor {
     public let identifier: String
     public let localizedTitle: String
+    public let subtitle: String?
+    public let manufacturer: String?
+    public let image: UIImage?
 
-    public init(identifier: String, localizedTitle: String) {
+    public init(
+        identifier: String,
+        localizedTitle: String,
+        subtitle: String? = nil,
+        manufacturer: String? = nil,
+        image: UIImage? = nil
+    ) {
         self.identifier = identifier
         self.localizedTitle = localizedTitle
+        self.subtitle = subtitle
+        self.manufacturer = manufacturer
+        self.image = image
     }
 }
 

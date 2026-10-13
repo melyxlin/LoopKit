@@ -16,3 +16,10 @@ public protocol DeviceManagerUI: DeviceManager {
     /// An image representing a device configuration after it is set up
     var smallImage: UIImage? { get }
 }
+
+public extension DeviceManagerUI {
+    /// An image representing the device in the plugin picker.
+    static var pickerImage: UIImage? {
+        onboardingImage
+    }
+}

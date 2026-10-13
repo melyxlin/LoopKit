@@ -12,10 +12,22 @@ import LoopKit
 public struct ServiceDescriptor {
     public let identifier: String
     public let localizedTitle: String
+    public let subtitle: String?
+    public let category: String?
+    public let image: UIImage?
 
-    public init(identifier: String, localizedTitle: String) {
+    public init(
+        identifier: String,
+        localizedTitle: String,
+        subtitle: String? = nil,
+        category: String? = nil,
+        image: UIImage? = nil
+    ) {
         self.identifier = identifier
         self.localizedTitle = localizedTitle
+        self.subtitle = subtitle
+        self.category = category
+        self.image = image
     }
 }
 
