@@ -129,6 +129,7 @@ public extension LegacyDoseChart {
                 axisLabelSettings: axisLabelSettings,
                 chartPoints: points.highlight,
                 tintColor: colors.insulinTint,
+                backgroundColor: colors.background,
                 highlightLabelOffsetY: highlightLabelOffsetY,
                 gestureRecognizer: gestureRecognizer
             )

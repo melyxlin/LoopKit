@@ -73,6 +73,7 @@ public extension COBChart {
                 axisLabelSettings: axisLabelSettings,
                 chartPoints: cobPoints,
                 tintColor: colors.carbTint,
+                backgroundColor: colors.background,
                 highlightLabelOffsetY: highlightLabelOffsetY,
                 gestureRecognizer: gestureRecognizer
             )

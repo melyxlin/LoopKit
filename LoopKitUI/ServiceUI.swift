@@ -12,6 +12,7 @@ import LoopKit
 public struct ServiceDescriptor {
     public let identifier: String
     public let localizedTitle: String
+    /// Details shown under the title in the picker
     public let subtitle: String?
     public let category: String?
     public let image: UIImage?
@@ -20,8 +21,8 @@ public struct ServiceDescriptor {
         identifier: String,
         localizedTitle: String,
         subtitle: String? = nil,
-        category: String? = nil,
-        image: UIImage? = nil
+        category: String?,
+        image: UIImage?
     ) {
         self.identifier = identifier
         self.localizedTitle = localizedTitle

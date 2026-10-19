@@ -13,6 +13,7 @@ import LoopAlgorithm
 public struct PumpManagerDescriptor {
     public let identifier: String
     public let localizedTitle: String
+    /// The models the plugin supports, or other details shown under the title in the picker
     public let subtitle: String?
     public let manufacturer: String?
     public let image: UIImage?
@@ -21,8 +22,8 @@ public struct PumpManagerDescriptor {
         identifier: String,
         localizedTitle: String,
         subtitle: String? = nil,
-        manufacturer: String? = nil,
-        image: UIImage? = nil
+        manufacturer: String?,
+        image: UIImage?
     ) {
         self.identifier = identifier
         self.localizedTitle = localizedTitle

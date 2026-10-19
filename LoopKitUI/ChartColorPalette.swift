@@ -17,6 +17,7 @@ public struct ChartColorPalette {
     public let glucoseTint: UIColor
     public let insulinTint: UIColor
     public let carbTint: UIColor
+    /// The chart's surface color, used to cover axis labels while scrubbing.
     public let background: UIColor
 
     public init(

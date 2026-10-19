@@ -7,12 +7,14 @@
 
 import HealthKit
 import SwiftUI
+import UIKit
 import LoopKit
 import LoopAlgorithm
 
 public struct CGMManagerDescriptor {
     public let identifier: String
     public let localizedTitle: String
+    /// The models the plugin supports, or other details shown under the title in the picker
     public let subtitle: String?
     public let manufacturer: String?
     public let image: UIImage?

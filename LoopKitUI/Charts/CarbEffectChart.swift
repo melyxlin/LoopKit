@@ -127,6 +127,7 @@ extension CarbEffectChart {
                 axisLabelSettings: axisLabelSettings,
                 chartPoints: allCarbEffectPoints,
                 tintColor: colors.carbTint,
+                backgroundColor: colors.background,
                 highlightLabelOffsetY: highlightLabelOffsetY,
                 gestureRecognizer: gestureRecognizer
             )

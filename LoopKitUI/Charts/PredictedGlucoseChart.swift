@@ -161,6 +161,7 @@ extension PredictedGlucoseChart {
                 axisLabelSettings: axisLabelSettings,
                 chartPoints: glucosePoints + (alternatePredictedGlucosePoints ?? predictedGlucosePoints),
                 tintColor: colors.glucoseTint,
+                backgroundColor: colors.background,
                 highlightLabelOffsetY: highlightLabelOffsetY,
                 gestureRecognizer: gestureRecognizer
             )

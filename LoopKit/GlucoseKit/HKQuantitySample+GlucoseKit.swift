@@ -10,6 +10,8 @@ import HealthKit
 import LoopAlgorithm
 
 let MetadataKeyGlucoseIsDisplayOnly = "com.loudnate.GlucoseKit.HKMetadataKey.GlucoseIsDisplayOnly"
+let MetadataKeyGlucoseIsBackfill = "com.LoopKit.GlucoseKit.HKMetadataKey.GlucoseIsBackfill"
+let MetadataKeyGlucoseReceivedDate = "com.LoopKit.GlucoseKit.HKMetadataKey.GlucoseReceivedDate"
 let MetadataKeyGlucoseCondition = "com.LoopKit.GlucoseKit.HKMetadataKey.GlucoseCondition"
 let MetadataKeyGlucoseTrend = "com.LoopKit.GlucoseKit.HKMetadataKey.GlucoseTrend"
 let MetadataKeyGlucoseTrendRateValue = "com.LoopKit.GlucoseKit.HKMetadataKey.GlucoseTrendRateValue"
@@ -62,6 +64,14 @@ extension HKQuantitySample {
 
     public var isDisplayOnly: Bool {
         return metadata?[MetadataKeyGlucoseIsDisplayOnly] as? Bool ?? false
+    }
+
+    public var isBackfill: Bool {
+        return metadata?[MetadataKeyGlucoseIsBackfill] as? Bool ?? false
+    }
+
+    public var receivedDate: Date? {
+        return metadata?[MetadataKeyGlucoseReceivedDate] as? Date
     }
 
     public var wasUserEntered: Bool {
