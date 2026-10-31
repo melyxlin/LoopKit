@@ -1687,6 +1687,12 @@
             "value" : "%@U"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@E"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2289,7 +2295,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ of je Glucoseveiligheidslimiet, afhankelijk van welke hoger is"
+            "value" : "%1$@ of je glucoseveiligheidslimiet, afhankelijk van welke hoger is"
           }
         },
         "pl" : {
@@ -2704,6 +2710,12 @@
             "value" : "%1$@ unità rimanenti alle ore %2$@"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@enheter igjen kl. %2$@"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2779,7 +2791,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ units remaining at %2$@"
+            "value" : "%1$@ 剩余单元 %2$@"
           }
         }
       }
@@ -4322,7 +4334,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Een Correctiebereik is anders. Dit zal een kleiner bereik zijn."
+            "value" : "Een correctiebereik is anders. Dit zal een kleiner bereik zijn."
           }
         },
         "pl" : {
@@ -5351,7 +5363,7 @@
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Legg til karbohydrater"
+            "value" : "Legg inn karbohydrater"
           }
         },
         "nb-NO" : {
@@ -5363,7 +5375,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kh. Inv. Toevoegen"
+            "value" : "Koolhydraten toevoegen"
           }
         },
         "pl" : {
@@ -5429,7 +5441,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "添加碳水"
+            "value" : "添加碳水摄入"
           }
         }
       }
@@ -6297,7 +6309,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Basaalsnelheden"
+            "value" : "Basaalstanden"
           }
         },
         "pl" : {
@@ -7207,7 +7219,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tijdelijk Basaal Annuleren"
+            "value" : "Tijdelijk basaal annuleren"
           }
         },
         "pl" : {
@@ -7344,7 +7356,7 @@
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Karb forhold"
+            "value" : "Karbohydratforhold"
           }
         },
         "nb-NO" : {
@@ -7805,7 +7817,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kies een langere opnametijd voor grotere maaltijden of voor maaltijden die vetten en eiwitten bevatten. Dit is alleen een leidraad voor het algoritme en hoeft niet exact te zijn."
+            "value" : "Kies een langere opnametijd voor grote maaltijden of maaltijden met veel vet en eiwit. Dit is alleen een richtlijn voor het algoritme en hoeft niet precies te kloppen."
           }
         },
         "pl" : {
@@ -7871,7 +7883,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "如果吃大餐请选择比较长的吸收时间，或者是以脂肪和蛋白为主的食物。该设置仅为算法的一般原则，具体请根据自身情况调整"
+            "value" : "对于分量较大的餐食，或含有脂肪和蛋白质的餐食，请选择较长的吸收时间。这仅作为算法的参考，无需完全精确。"
           }
         }
       }
@@ -8722,7 +8734,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ok"
+            "value" : "OK"
           }
         },
         "pl" : {
@@ -9292,6 +9304,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continua"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortsett"
           }
         },
         "nb-NO" : {
@@ -10059,7 +10077,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aangepaste Override"
+            "value" : "Aangepaste override"
           }
         },
         "pl" : {
@@ -10202,7 +10220,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aangepast Programma"
+            "value" : "Aangepast programma"
           }
         },
         "pl" : {
@@ -10651,7 +10669,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verwijder Account"
+            "value" : "Verwijder account"
           }
         },
         "pl" : {
@@ -10801,7 +10819,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verwijder Alles"
+            "value" : "Alles verwijderen"
           }
         },
         "pl" : {
@@ -11248,7 +11266,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Programma Uitschakelen"
+            "value" : "Programma uitschakelen"
           }
         },
         "pl" : {
@@ -11377,6 +11395,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fine"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ferdig"
           }
         },
         "nb-NO" : {
@@ -11980,7 +12004,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Override Aanpassen"
+            "value" : "Override aanpassen"
           }
         },
         "pl" : {
@@ -14337,7 +14361,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Krijg hulp bij Therapieinstellingen"
+            "value" : "Krijg hulp bij therapieinstellingen"
           }
         },
         "pl" : {
@@ -14480,7 +14504,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ga Terug"
+            "value" : "Ga terug"
           }
         },
         "pl" : {
@@ -14626,7 +14650,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Basaalsnelheid"
+            "value" : "Hoge basaalstand"
           }
         },
         "pl" : {
@@ -14769,7 +14793,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Koolhydraatratio"
+            "value" : "Hoge koolhydraatratio"
           }
         },
         "pl" : {
@@ -14912,7 +14936,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Correctiewaarde"
+            "value" : "Hoge correctiewaarde"
           }
         },
         "pl" : {
@@ -15055,7 +15079,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Glucoseveiligheidslimiet"
+            "value" : "Hoge glucoseveiligheidslimiet"
           }
         },
         "pl" : {
@@ -15198,7 +15222,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Insulinegevoeligheid"
+            "value" : "Hoge insulinegevoeligheid"
           }
         },
         "pl" : {
@@ -15341,7 +15365,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Maximale Basaalsnelheid"
+            "value" : "Hoge maximale basaalstand"
           }
         },
         "pl" : {
@@ -15484,7 +15508,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Maximale Bolus"
+            "value" : "Hoge maximale bolus"
           }
         },
         "pl" : {
@@ -15628,7 +15652,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Pre-Meal Waarde"
+            "value" : "Hoge Pre-Meal waarde"
           }
         },
         "pl" : {
@@ -15772,7 +15796,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoge Trainingswaarde"
+            "value" : "Hoge trainingswaarde"
           }
         },
         "pl" : {
@@ -16068,7 +16092,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Als deze instellingen er goed uitzien, tik op Instellingen Opslaan om verder te gaan."
+            "value" : "Als deze instellingen er goed uitzien, tik op Instellingen opslaan om verder te gaan."
           }
         },
         "pl" : {
@@ -16092,7 +16116,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dacă aceste setări vi se par potrivite, atingeți Salvare setări pentru a continua."
+            "value" : "Dacă aceste setări vi se par potrivite, atingeți Salvați setările pentru a continua."
           }
         },
         "ru" : {
@@ -16239,7 +16263,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dacă ați folosit anterior un CGM, probabil sunteți familiarizat cu intervalul țintă ca o gamă largă de valori pe care le-ați dori pentru alertele de notificare, cum sunt 70-180 mg/dl sau 90-200 mg/dl."
+            "value" : "Dacă ați folosit anterior un senzor de glicemie, probabil sunteți familiarizat cu intervalul țintă ca o gamă largă de valori pe care le-ați dori pentru alertele de notificare, cum sunt 70-180 mg/dl sau 90-200 mg/dl."
           }
         },
         "ru" : {
@@ -17262,7 +17286,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Basaalsnelheid"
+            "value" : "Lage basaalstand"
           }
         },
         "pl" : {
@@ -17405,7 +17429,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Koolhydraatratio"
+            "value" : "Lage koolhydraatratio"
           }
         },
         "pl" : {
@@ -17548,7 +17572,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Correctiewaarde"
+            "value" : "Lage correctiewaarde"
           }
         },
         "pl" : {
@@ -17691,7 +17715,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Glucoseveiligheidslimiet"
+            "value" : "Lage glucoseveiligheidslimiet"
           }
         },
         "pl" : {
@@ -17834,7 +17858,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Insulinegevoeligheid"
+            "value" : "Lage insulinegevoeligheid"
           }
         },
         "pl" : {
@@ -17977,7 +18001,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Maximale Basaalsnelheid"
+            "value" : "Lage maximale basaalstand"
           }
         },
         "pl" : {
@@ -18120,7 +18144,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Maximale Bolus"
+            "value" : "Lage maximale bolus"
           }
         },
         "pl" : {
@@ -18264,7 +18288,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Pre-Meal Waarde"
+            "value" : "Lage Pre-Meal waarde"
           }
         },
         "pl" : {
@@ -18408,7 +18432,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lage Trainingswaarde"
+            "value" : "Lage trainingswaarde"
           }
         },
         "pl" : {
@@ -18853,7 +18877,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maximale Basaalsnelheid"
+            "value" : "Maximale basaalstand"
           }
         },
         "pl" : {
@@ -18919,7 +18943,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "最大基础率限制"
+            "value" : "最大基础速率"
           }
         }
       }
@@ -19006,7 +19030,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maximale Basaalsnelheid is de maximale automatisch aangepaste basaalsnelheid die %1$@ mag toedienen om te helpen binnen je correctiebereik te komen."
+            "value" : "Maximale basaalstand is de maximale automatisch aangepaste basaalstand die %1$@ mag toedienen om te helpen binnen je correctiebereik te komen."
           }
         },
         "pl" : {
@@ -19156,7 +19180,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maximale Bolus"
+            "value" : "Maximale bolus"
           }
         },
         "pl" : {
@@ -19222,7 +19246,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "最大剂量限制"
+            "value" : "最大剂量"
           }
         }
       }
@@ -19755,7 +19779,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Meer Informatie"
+            "value" : "Meer informatie"
           }
         },
         "pl" : {
@@ -20059,7 +20083,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nieuwe Invoer"
+            "value" : "Nieuwe invoer"
           }
         },
         "pl" : {
@@ -20208,7 +20232,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nieuw Programma"
+            "value" : "Nieuw programma"
           }
         },
         "pl" : {
@@ -20357,7 +20381,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Geen Basale Insuline"
+            "value" : "Geen basale insuline"
           }
         },
         "pl" : {
@@ -20824,7 +20848,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Totale Insulinebehoefte"
+            "value" : "Totale insulinebehoefte"
           }
         },
         "pl" : {
@@ -21121,7 +21145,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Override Programma's"
+            "value" : "Override voorinstellingen"
           }
         },
         "pl" : {
@@ -21295,7 +21319,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Presetările suprascrierilor pot fi setate în secțiunea 'Configurare' din ecranul de setări."
+            "value" : "Presetările de suprascriere pot fi setate în secțiunea 'Configurare' din ecranul de setări."
           }
         },
         "ru" : {
@@ -21444,7 +21468,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Înlocuiri"
+            "value" : "Suprascrieri"
           }
         },
         "ru" : {
@@ -21575,7 +21599,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pre-Meal"
+            "value" : "Voorafgaand aan maaltijd"
           }
         },
         "pl" : {
@@ -21719,7 +21743,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pre-Meal Waarden"
+            "value" : "Pre-Meal waarden"
           }
         },
         "pl" : {
@@ -22460,7 +22484,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pomp Werkt Niet"
+            "value" : "Pomp werkt niet"
           }
         },
         "pl" : {
@@ -22609,7 +22633,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Snelwerkend - Volwassenen"
+            "value" : "Snelwerkend – volwassenen"
           }
         },
         "pl" : {
@@ -22758,7 +22782,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Snelwerkend - Kinderen"
+            "value" : "Snelwerkend – kinderen"
           }
         },
         "pl" : {
@@ -23230,7 +23254,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hervat Toediening"
+            "value" : "Hervat toediening"
           }
         },
         "pl" : {
@@ -23525,7 +23549,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bekijk en Instellingen Opslaan"
+            "value" : "Bekijk en sla instellingen op"
           }
         },
         "pl" : {
@@ -23954,6 +23978,12 @@
             "value" : "Salva"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lagre"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24112,7 +24142,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Basaalsnelheden Opslaan?"
+            "value" : "Basaalsnelheden opslaan?"
           }
         },
         "pl" : {
@@ -24255,7 +24285,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Koolhydraatratio Opslaan?"
+            "value" : "Koolhydraatratio opslaan?"
           }
         },
         "pl" : {
@@ -24398,7 +24428,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Correctiebereik(en) Opslaan?"
+            "value" : "Correctiebereik(en) opslaan?"
           }
         },
         "pl" : {
@@ -24687,7 +24717,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Glucoseveiligheidlimiet Opslaan?"
+            "value" : "Glucoseveiligheidlimiet opslaan?"
           }
         },
         "pl" : {
@@ -24711,7 +24741,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Salvați limita de siguranță pentru glicemie?"
+            "value" : "Salvați limita de siguranță a glicemiei?"
           }
         },
         "ru" : {
@@ -24974,7 +25004,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pre-Meal Bereik Opslaan?"
+            "value" : "Pre-Meal bereik opslaan?"
           }
         },
         "pl" : {
@@ -25121,7 +25151,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trainingsbereik Opslaan?"
+            "value" : "Trainingsbereik opslaan?"
           }
         },
         "pl" : {
@@ -26028,7 +26058,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sommige gebruikers kiezen een waarde 2, 3 of 4 keer hoger dan hun hoogste ingestelde basaalsnelheid."
+            "value" : "Sommige gebruikers kiezen een waarde 2, 3 of 4 keer hoger dan hun hoogste ingestelde basaalstand."
           }
         },
         "pl" : {
@@ -26341,7 +26371,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tijdelijk Basaal Starten"
+            "value" : "Tijdelijk basaal starten"
           }
         },
         "pl" : {
@@ -26776,7 +26806,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Onderbreek Toediening"
+            "value" : "Onderbreek toediening"
           }
         },
         "pl" : {
@@ -27067,7 +27097,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Omschakelen naar Voorbeeldstand"
+            "value" : "Omschakelen naar voorbeeldstand"
           }
         },
         "pl" : {
@@ -27681,7 +27711,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apăsați pentru setare"
+            "value" : "Apăsați pentru a seta"
           }
         },
         "ru" : {
@@ -27950,7 +27980,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tijdelijk verlagen van je glucosedoel vóór de maaltijd om de kans op post-maaltijd glucosepieken te verkleinen."
+            "value" : "Verlaag tijdelijk je glucosedoel vóór, tijdens of na het trainen/sporten. Zo verklein je de kans op een hoge glucose."
           }
         },
         "pl" : {
@@ -28094,7 +28124,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verhoog tijdelijk je glucosedoel voor, gedurende, of na fysieke activiteit om het risico op lage glucosegebeurtenissen te verminderen."
+            "value" : "Verhoog tijdelijk je glucosedoel vóór, tijdens of na het trainen/sporten. Zo verklein je de kans op een lage glucose."
           }
         },
         "pl" : {
@@ -28532,7 +28562,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "zijn dan je Correctiebereik."
+            "value" : "zijn dan je correctiebereik."
           }
         },
         "pl" : {
@@ -28827,7 +28857,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Het model gebruikt bij Loop, staat verandering van actieduur toe."
+            "value" : "Het oudere model dat Loop gebruikte. Hiermee kun je de werkingsduur van insuline zelf instellen."
           }
         },
         "pl" : {
@@ -31746,7 +31776,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kan Niet Opslaan"
+            "value" : "Kan niet opslaan"
           }
         },
         "pl" : {
@@ -32024,6 +32054,12 @@
             "value" : "Sconosciuto"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukjent"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32175,7 +32211,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Niet Geselecteerd"
+            "value" : "Niet geselecteerd"
           }
         },
         "pl" : {
@@ -32318,7 +32354,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Niet Ingesteld"
+            "value" : "Niet ingesteld"
           }
         },
         "pl" : {
@@ -33373,7 +33409,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Werk samen met je zorgverlener om een waarde te kiezen die hoger is dan je hoogst ingestelde basaalsnelheid, maar zo conservatief of agressief waarbij je jezelf prettig voelt."
+            "value" : "Werk samen met je zorgverlener om een waarde te kiezen die hoger is dan je hoogst ingestelde basaalstand, maar zo conservatief of agressief waarbij je jezelf prettig voelt."
           }
         },
         "pl" : {
@@ -33523,7 +33559,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Training"
+            "value" : "Training (sport)"
           }
         },
         "pl" : {
@@ -33733,7 +33769,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Workout Range is the glucose value or range of values you want %1$@ to target during activity. This range will be in effect when you activate the Workout Preset button."
+            "value" : "“运动范围”是您希望 %1$@ 在活动期间达到的目标血糖值或目标范围。启用“运动预设”按钮后，该范围将生效。"
           }
         }
       }
@@ -34971,7 +35007,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Je basale insulinesnelheid is het aantal eenheden per uur dat je wilt toedienen om in je basale insulinebehoefte te voorzien."
+            "value" : "Je basaalstand is hoeveel eenheden insuline je per uur krijgt als basis, los van maaltijden en correcties."
           }
         },
         "pl" : {
@@ -35114,7 +35150,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "je Glucoseveiligheidslimiet"
+            "value" : "je glucoseveiligheidslimiet"
           }
         },
         "pl" : {
@@ -35404,7 +35440,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Je Insulinegevoeligheidsfactor (ISF) is de daling van de glucosewaarde uitgaande van één eenheid insuline."
+            "value" : "Je insulinegevoeligheidsfactor (ISF) is de daling van de glucosewaarde uitgaande van één eenheid insuline."
           }
         },
         "pl" : {
@@ -35428,7 +35464,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Factorul de sensibilitate la insulină (ISF) este scăderea glicemiei determinată de o unitate de insulină."
+            "value" : "Factorul de sensibilitate la insulină (FSI) este scăderea glicemiei determinată de o unitate de insulină."
           }
         },
         "ru" : {
@@ -35551,7 +35587,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Je Pre-Meal Bereik zou de glucosewaarde moeten zijn (of een bereik van waarden) waar je wilt dat %1$@ naar dat streeft tegen de tijd dat je je eerste hap van je maaltijd neemt. Dit bereik wordt actief wanneer je het Pre-Meal Programma met de knop activeert."
+            "value" : "Je Pre-Meal-bereik zou de glucosewaarde moeten zijn (of een bereik van waarden) waar je wilt dat %1$@ naar dat streeft tegen de tijd dat je je eerste hap van je maaltijd neemt. Dit bereik wordt actief wanneer je het Pre-Meal-programma met de knop activeert."
           }
         },
         "pl" : {

@@ -760,6 +760,12 @@
         }
       }
     },
+    "A different carb entry was already saved with this identifier" : {
+      "comment": "Describes an error for adding a carb entry whose identifier is already used by an entry with different content"
+    },
+    "This carb entry was already saved and has since been deleted" : {
+      "comment": "Describes an error for adding a carb entry that was already added and then deleted"
+    },
     "A rapid-acting insulin" : {
       "comment" : "Description for rapid acting insulin types"
     },
@@ -1982,6 +1988,12 @@
             "value" : "Basale"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basal"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "new",
@@ -2152,7 +2164,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Basaalsnelheden"
+            "value" : "Basaalstanden"
           }
         },
         "pl" : {
@@ -2278,6 +2290,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bolo"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bolus"
           }
         },
         "nb-NO" : {
@@ -2426,7 +2444,7 @@
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Karb forhold"
+            "value" : "Karbohydratforhold"
           }
         },
         "nb-NO" : {
@@ -2738,7 +2756,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Autorisatie Geweigerd"
+            "value" : "Autorisatie geweigerd"
           }
         },
         "pl" : {
@@ -2804,7 +2822,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "没有权限"
+            "value" : "授权被拒绝"
           }
         }
       }
@@ -3778,7 +3796,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kritieke Update"
+            "value" : "Kritieke update"
           }
         },
         "pl" : {
@@ -4085,7 +4103,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apparaat Geweigerd"
+            "value" : "Apparaat geweigerd"
           }
         },
         "pl" : {
@@ -7164,7 +7182,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ongeldige Configuratie"
+            "value" : "Ongeldige configuratie"
           }
         },
         "pl" : {
@@ -7893,7 +7911,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maximale Basaalsnelheid"
+            "value" : "Maximale basaalstand"
           }
         },
         "pl" : {
@@ -8040,7 +8058,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maximale Basaalsnelheid is de maximale tijdelijke basaalsnelheid die %1$@ mag instellen."
+            "value" : "Maximale basaalstand is de maximale tijdelijke basaalstand die %1$@ mag instellen."
           }
         },
         "pl" : {
@@ -8189,7 +8207,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maximale Bolus"
+            "value" : "Maximale bolus"
           }
         },
         "pl" : {
@@ -8336,7 +8354,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maximale Bolus is de hoogste bolushoeveelheid die je in één keer kunt toedienen om koolhydraten te dekken of om een hoge glucose te verlagen."
+            "value" : "Maximale bolus is de hoogste bolushoeveelheid die je in één keer kunt toedienen om koolhydraten te dekken of om een hoge glucose te verlagen."
           }
         },
         "pl" : {
@@ -8846,7 +8864,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "毫摩尔/升"
+            "value" : "mmol/L"
           }
         }
       }
@@ -9227,7 +9245,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aandacht Nodig"
+            "value" : "Aandacht nodig"
           }
         },
         "pl" : {
@@ -9370,7 +9388,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Geen Update"
+            "value" : "Geen update"
           }
         },
         "pl" : {
@@ -10105,7 +10123,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ok"
+            "value" : "OK"
           }
         },
         "pl" : {
@@ -10556,7 +10574,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pre-Meal"
+            "value" : "Voorafgaand aan maaltijd"
           }
         },
         "pl" : {
@@ -10714,7 +10732,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aanbevolen Update"
+            "value" : "Aanbevolen update"
           }
         },
         "pl" : {
@@ -11747,6 +11765,12 @@
             "value" : "Basale temporanea"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Midlertidig basal"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12613,6 +12637,12 @@
             "value" : "U"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E"
+          }
+        },
         "nb-NO" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12748,6 +12778,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "U/ora"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E/t"
           }
         },
         "nb-NO" : {
@@ -12903,7 +12939,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toediening Onzeker"
+            "value" : "Toediening onzeker"
           }
         },
         "pl" : {
@@ -13651,7 +13687,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Update Beschikbaar"
+            "value" : "Update beschikbaar"
           }
         },
         "pl" : {
@@ -13801,7 +13837,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Training"
+            "value" : "Training/Sport"
           }
         },
         "pl" : {
@@ -14231,7 +14267,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Je Insulinegevoeligheid is de daling van de glucose verwacht van één eenheid insuline."
+            "value" : "Je insulinegevoeligheid is de daling van de glucose verwacht van één eenheid insuline."
           }
         },
         "pl" : {
