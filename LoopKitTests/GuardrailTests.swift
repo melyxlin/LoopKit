@@ -44,12 +44,9 @@ class GuardrailTests: XCTestCase {
     
     func testMinCorrectionRangeValue() {
         let suspendThresholdInputs: [Double?] = [ nil, 80, 88 ]
-        // correctionRange absolute lower bound is 87 mg/dL. The historical 86.1 was
-        // #527's deliberately-offset constant (86.1...180.5), reverted to clean
-        // 87...180 in the Swift-package lineage we now track; leftover here and in
-        // testPreMealCorrectionRange when the constants were reverted. Boundary
-        // selectability is handled by GlucoseValuePicker, not offset constants.
-        let expected: [Double] = [ 87, 87, 88 ]
+        // This customization uses a 70 mg/dL correction-range lower bound.
+        // The minimum also respects the configured suspend threshold.
+        let expected: [Double] = [ 70, 80, 88 ]
         for (index, suspendThreshold) in suspendThresholdInputs.enumerated() {
             XCTAssertEqual(expected[index], Guardrail.minCorrectionRangeValue(suspendThreshold: suspendThreshold.map { GlucoseThreshold(unit: .milligramsPerDeciliter, value: $0) }).doubleValue(for: .milligramsPerDeciliter), "Index \(index) failed")
         }
@@ -58,9 +55,9 @@ class GuardrailTests: XCTestCase {
     func testCorrectionRange() {
         let guardrail = Guardrail.correctionRange
         let expectedAndTest: [(SafetyClassification, Double)] = [
-            (SafetyClassification.withinRecommendedRange, 87),
+            (SafetyClassification.withinRecommendedRange, 70),
             (SafetyClassification.withinRecommendedRange, 180),
-            (SafetyClassification.outsideRecommendedRange(.belowRecommended), 87.nextDown),
+            (SafetyClassification.outsideRecommendedRange(.belowRecommended), 70.nextDown),
             (SafetyClassification.outsideRecommendedRange(.maximum), 180.nextUp),
         ]
         

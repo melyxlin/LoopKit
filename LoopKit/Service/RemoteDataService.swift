@@ -60,6 +60,10 @@ public protocol RemoteDataService: Service {
     /// The maximum number of dose data to upload to the remote data service at one time.
     var doseDataLimit: Int? { get }
 
+    /// Whether dose queries may include records read from other apps in HealthKit.
+    /// Pump-reporting services can opt out while the store still has the source provenance.
+    var doseDataIncludesOtherApps: Bool { get }
+
     /**
      Upload dose data to the remote data service.
 
@@ -132,6 +136,7 @@ public extension RemoteDataService {
     var alertDataLimit: Int? { return nil }
     var carbDataLimit: Int? { return nil }
     var doseDataLimit: Int? { return nil }
+    var doseDataIncludesOtherApps: Bool { return true }
     var dosingDecisionDataLimit: Int? { return nil }
     var glucoseDataLimit: Int? { return nil }
     var pumpEventDataLimit: Int? { return nil }

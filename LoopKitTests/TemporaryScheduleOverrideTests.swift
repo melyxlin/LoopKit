@@ -793,6 +793,24 @@ class TemporaryPresetSettingsPersistenceTests: XCTestCase {
     }
 }
 
+class TemporaryPresetAutoStartPersistenceTests: XCTestCase {
+
+    func testAutoStartSurvivesRawValueRoundTrip() {
+        let original = TemporaryPreset(
+            symbol: nil,
+            name: "Auto Start Test",
+            settings: TemporaryPresetSettings(targetRange: nil),
+            duration: .indefinite,
+            autoStartScheduledPreset: true
+        )
+
+        let restored = TemporaryPreset(rawValue: original.rawValue)
+
+        XCTAssertNotNil(restored)
+        XCTAssertEqual(restored?.autoStartScheduledPreset, true)
+    }
+}
+
 class TemporaryScheduleOverrideContextCodableTests: XCTestCase {
     func testCodablePreMeal() throws {
         try assertTemporaryScheduleOverrideContextCodable(.preMeal, encodesJSON: """
@@ -815,6 +833,7 @@ class TemporaryScheduleOverrideContextCodableTests: XCTestCase {
   "context" : {
     "preset" : {
       "preset" : {
+        "autoStartScheduledPreset" : false,
         "duration" : "indefinite",
         "id" : "238E41EA-9576-4981-A1A4-51E10228584F",
         "name" : "Rocket",

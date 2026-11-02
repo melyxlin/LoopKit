@@ -263,7 +263,7 @@ extension TemporaryPreset: RawRepresentable {
 
         let scheduleStartDate = rawValue["scheduleStartDate"] as? Date
         let rawRepeatOptions = rawValue["repeatOptions"] as? PresetScheduleRepeatOptions.RawValue
-        let autoStartScheduledPreset = rawValue["autoScheduledPreset"] as? Bool ?? false
+        let autoStartScheduledPreset = rawValue["autoStartScheduledPreset"] as? Bool ?? false
         
         var symbol: PresetSymbol? = nil
         if let symbolRawValue = rawValue["symbol"] as? PresetSymbol.RawValue {

@@ -278,6 +278,7 @@ class SettingsStorePersistenceTests: PersistenceControllerTestCase, SettingsStor
     },
     "overridePresets" : [
       {
+        "autoStartScheduledPreset" : false,
         "duration" : {
           "finite" : {
             "duration" : 3600
@@ -848,6 +849,7 @@ class StoredSettingsCodableTests: XCTestCase {
   },
   "overridePresets" : [
     {
+      "autoStartScheduledPreset" : false,
       "duration" : {
         "finite" : {
           "duration" : 3600

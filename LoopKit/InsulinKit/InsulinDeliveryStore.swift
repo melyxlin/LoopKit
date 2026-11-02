@@ -859,7 +859,7 @@ extension InsulinDeliveryStore {
         case failure(Error)
     }
 
-    public func executeDoseQuery(fromQueryAnchor queryAnchor: QueryAnchor?, limit: Int, completion: @escaping (DoseQueryResult) -> Void) {
+    public func executeDoseQuery(fromQueryAnchor queryAnchor: QueryAnchor?, limit: Int, includeOtherApps: Bool = true, completion: @escaping (DoseQueryResult) -> Void) {
         queue.async {
             var queryAnchor = queryAnchor ?? QueryAnchor()
             var queryCreatedResult = [DoseEntry]()
@@ -875,6 +875,13 @@ extension InsulinDeliveryStore {
                 let storedRequest: NSFetchRequest<CachedInsulinDeliveryObject> = CachedInsulinDeliveryObject.fetchRequest()
 
                 storedRequest.predicate = NSPredicate(format: "modificationCounter > %d", queryAnchor.modificationCounter)
+                if !includeOtherApps {
+                    storedRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+                        storedRequest.predicate!,
+                        NSPredicate(format: "provenanceIdentifier == %@", self.provenanceIdentifier),
+                        NSPredicate(format: "hasLoopKitOrigin == YES")
+                    ])
+                }
                 storedRequest.sortDescriptors = [NSSortDescriptor(key: "modificationCounter", ascending: true)]
                 storedRequest.fetchLimit = limit
 
