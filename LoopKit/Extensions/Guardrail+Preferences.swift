@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import LoopAlgorithm
 
 public extension Guardrail where Value == LoopQuantity {
     static let basalLockThreshold = Guardrail(

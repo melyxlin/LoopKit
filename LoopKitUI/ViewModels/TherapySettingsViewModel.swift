@@ -153,8 +153,7 @@ extension TherapySettingsViewModel {
                             uncheckedBounds: (
                                 lower: max(quantity, targetRange.lowerBound),
                                 upper: max(quantity, targetRange.upperBound))),
-                        insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor,
-                        limitAutomaticDosing: preset.settings.limitAutomaticDosing
+                        insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor
                     )
                     return newPreset
                 } else {

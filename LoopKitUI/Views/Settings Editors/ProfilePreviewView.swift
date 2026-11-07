@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 import HealthKit
 import LoopKit
-import LoopAlgorithm
 
 enum ActiveAlert {
     case load

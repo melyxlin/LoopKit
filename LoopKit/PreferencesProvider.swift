@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import LoopAlgorithm
 
 public protocol PreferencesProvider {
     var basalLockThreshold: LoopQuantity { get set }

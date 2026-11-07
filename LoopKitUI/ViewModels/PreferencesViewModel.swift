@@ -8,7 +8,6 @@
 
 import Foundation
 import LoopKit
-import LoopAlgorithm
 
 public class PreferencesViewModel: ObservableObject {
     @Published var basalLockThreshold: LoopQuantity

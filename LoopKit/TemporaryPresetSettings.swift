@@ -11,7 +11,6 @@ import HealthKit
 public struct TemporaryPresetSettings: Hashable, Sendable {
     private var targetRangeInMgdl: DoubleRange?
     public var insulinNeedsScaleFactor: Double?
-    public var limitAutomaticDosing: Bool
 
     public var targetRange: ClosedRange<LoopQuantity>? {
         return targetRangeInMgdl.map { $0.quantityRange(for: .milligramsPerDeciliter) }
@@ -36,24 +35,20 @@ public struct TemporaryPresetSettings: Hashable, Sendable {
     public init(
         unit: LoopUnit,
         targetRange: DoubleRange?,
-        insulinNeedsScaleFactor: Double? = nil,
-        limitAutomaticDosing: Bool = false
+        insulinNeedsScaleFactor: Double? = nil
     ) {
         self.init(
             targetRange: targetRange?.quantityRange(for: unit),
-            insulinNeedsScaleFactor: insulinNeedsScaleFactor,
-            limitAutomaticDosing: limitAutomaticDosing
+            insulinNeedsScaleFactor: insulinNeedsScaleFactor
         )
     }
 
     public init(
         targetRange: ClosedRange<LoopQuantity>?,
-        insulinNeedsScaleFactor: Double? = nil,
-        limitAutomaticDosing: Bool = false
+        insulinNeedsScaleFactor: Double? = nil
     ) {
         self.targetRangeInMgdl = targetRange?.doubleRange(for: .milligramsPerDeciliter)
         self.insulinNeedsScaleFactor = insulinNeedsScaleFactor
-        self.limitAutomaticDosing = limitAutomaticDosing
     }
 }
 
@@ -63,12 +58,10 @@ extension TemporaryPresetSettings: RawRepresentable {
     private enum Key {
         static let targetRange = "targetRange"
         static let insulinNeedsScaleFactor = "insulinNeedsScaleFactor"
-        static let limitAutomaticDosing = "limitAutomaticDosing"
         static let version = "version"
     }
 
     public init?(rawValue: RawValue) {
-        self.limitAutomaticDosing = rawValue[Key.limitAutomaticDosing] as? Bool ?? false
         if let targetRangeRawValue = rawValue[Key.targetRange] as? DoubleRange.RawValue,
             let targetRange = DoubleRange(rawValue: targetRangeRawValue) {
             self.targetRangeInMgdl = targetRange
@@ -94,9 +87,6 @@ extension TemporaryPresetSettings: RawRepresentable {
             raw[Key.insulinNeedsScaleFactor] = insulinNeedsScaleFactor
         }
 
-        if limitAutomaticDosing {
-            raw[Key.limitAutomaticDosing] = true
-        }
 
         raw[Key.version] = 1
 
@@ -108,7 +98,6 @@ extension TemporaryPresetSettings: Codable {
     private enum CodingKeys: String, CodingKey {
         case targetRangeInMgdl
         case insulinNeedsScaleFactor
-        case limitAutomaticDosing
     }
 
     public init(from decoder: Decoder) throws {
@@ -122,10 +111,6 @@ extension TemporaryPresetSettings: Codable {
             Double.self,
             forKey: .insulinNeedsScaleFactor
         )
-        limitAutomaticDosing = try container.decodeIfPresent(
-            Bool.self,
-            forKey: .limitAutomaticDosing
-        ) ?? false
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -140,8 +125,5 @@ extension TemporaryPresetSettings: Codable {
             forKey: .insulinNeedsScaleFactor
         )
 
-        if limitAutomaticDosing {
-            try container.encode(true, forKey: .limitAutomaticDosing)
-        }
     }
 }

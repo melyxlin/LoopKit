@@ -8,7 +8,6 @@
 
 import SwiftUI
 import LoopKit
-import LoopAlgorithm
 
 public struct PreferencesView: View {
     @Environment(\.dismissAction) private var dismiss

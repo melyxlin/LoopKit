@@ -177,8 +177,7 @@ public enum SelectablePreset: Hashable, Identifiable {
             case .activity(var activity):
                 activity.preset.settings = TemporaryPresetSettings(
                     targetRange: activity.preset.settings.targetRange,
-                    insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor,
-                    limitAutomaticDosing: activity.preset.settings.limitAutomaticDosing
+                    insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor
                 )
                 switch newValue {
                 case .indefinite:
@@ -192,8 +191,7 @@ public enum SelectablePreset: Hashable, Identifiable {
             case .custom(var preset):
                 preset.settings = TemporaryPresetSettings(
                     targetRange: preset.settings.targetRange,
-                    insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor,
-                    limitAutomaticDosing: preset.settings.limitAutomaticDosing
+                    insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor
                 )
                 switch newValue {
                 case .indefinite:
@@ -336,15 +334,13 @@ public enum SelectablePreset: Hashable, Identifiable {
             case .activity(var activity):
                 activity.preset.settings = TemporaryPresetSettings(
                     targetRange: newValue,
-                    insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor,
-                    limitAutomaticDosing: activity.preset.settings.limitAutomaticDosing
+                    insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor
                 )
                 self = .activity(activity)
             case .custom(var preset):
                 preset.settings = TemporaryPresetSettings(
                     targetRange: newValue,
-                    insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor,
-                    limitAutomaticDosing: preset.settings.limitAutomaticDosing
+                    insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor
                 )
                 self = .custom(preset)
             }
@@ -375,55 +371,20 @@ public enum SelectablePreset: Hashable, Identifiable {
             if case .activity(var activity) = self {
                 activity.preset.settings = TemporaryPresetSettings(
                     targetRange: activity.preset.settings.targetRange,
-                    insulinNeedsScaleFactor: newValue,
-                    limitAutomaticDosing: activity.preset.settings.limitAutomaticDosing
+                    insulinNeedsScaleFactor: newValue
                 )
                 self = .activity(activity)
             } else if case .custom(var preset) = self {
                 preset.settings = TemporaryPresetSettings(
                     targetRange: preset.settings.targetRange,
-                    insulinNeedsScaleFactor: newValue,
-                    limitAutomaticDosing: preset.settings.limitAutomaticDosing
+                    insulinNeedsScaleFactor: newValue
                 )
                 self = .custom(preset)
             }
         }
     }
 
-    public var limitAutomaticDosing: Bool {
-        get {
-            switch self {
-            case .custom(let preset):
-                return preset.settings.limitAutomaticDosing
-            case .activity(let activity):
-                return activity.preset.settings.limitAutomaticDosing
-            case .preMeal:
-                return false
-            }
-        }
-        set {
-            switch self {
-            case .activity(var activity):
-                activity.preset.settings = TemporaryPresetSettings(
-                    targetRange: activity.preset.settings.targetRange,
-                    insulinNeedsScaleFactor: activity.preset.settings.insulinNeedsScaleFactor,
-                    limitAutomaticDosing: newValue
-                )
-                self = .activity(activity)
 
-            case .custom(var preset):
-                preset.settings = TemporaryPresetSettings(
-                    targetRange: preset.settings.targetRange,
-                    insulinNeedsScaleFactor: preset.settings.insulinNeedsScaleFactor,
-                    limitAutomaticDosing: newValue
-                )
-                self = .custom(preset)
-
-            case .preMeal:
-                break
-            }
-        }
-    }
 
     public var canAdjustSensitivity: Bool {
         switch self {

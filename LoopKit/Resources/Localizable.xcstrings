@@ -761,10 +761,7 @@
       }
     },
     "A different carb entry was already saved with this identifier" : {
-      "comment": "Describes an error for adding a carb entry whose identifier is already used by an entry with different content"
-    },
-    "This carb entry was already saved and has since been deleted" : {
-      "comment": "Describes an error for adding a carb entry that was already added and then deleted"
+      "comment" : "Describes an error for adding a carb entry whose identifier is already used by an entry with different content"
     },
     "A rapid-acting insulin" : {
       "comment" : "Description for rapid acting insulin types"
@@ -5791,6 +5788,9 @@
         }
       }
     },
+    "g" : {
+      "comment" : "The short unit display string for grams"
+    },
     "g/U" : {
       "comment" : "The short unit display string for grams per U",
       "localizations" : {
@@ -8425,6 +8425,9 @@
         }
       }
     },
+    "mg/dL" : {
+      "comment" : "The short unit display string for milligrams of glucose per decilter"
+    },
     "mg/dL/min" : {
       "comment" : "The short unit display string for milligrams per liter per minute",
       "localizations" : {
@@ -8721,7 +8724,7 @@
 
     },
     "mmol/L" : {
-      "comment" : "The short unit display string for millimoles per liter",
+      "comment" : "The short unit display string for millimoles of glucose per liter\nThe short unit display string for millimoles per liter",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -12576,6 +12579,9 @@
           }
         }
       }
+    },
+    "This carb entry was already saved and has since been deleted" : {
+      "comment" : "Describes an error for adding a carb entry that was already added and then deleted"
     },
     "Training Complete" : {
 

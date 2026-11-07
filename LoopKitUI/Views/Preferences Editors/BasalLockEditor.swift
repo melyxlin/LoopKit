@@ -8,7 +8,6 @@
 
 import SwiftUI
 import LoopKit
-import LoopAlgorithm
 
 public struct BasalLockEditor: View {
     @EnvironmentObject private var displayGlucosePreference: DisplayGlucosePreference

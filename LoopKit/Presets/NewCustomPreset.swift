@@ -40,7 +40,6 @@ public struct NewCustomPreset {
     public var savePreset: Bool
     public var insulinMultiplier: Double = 1
     public var correctionRange: ClosedRange<LoopQuantity>?
-    public var limitAutomaticDosing: Bool = false
     public var name: String = ""
     public var duration: PresetDuration?
     public var startDate: Date?
@@ -51,7 +50,6 @@ public struct NewCustomPreset {
         savePreset: Bool = true,
         insulinMultiplier: Double = 1,
         correctionRange: ClosedRange<LoopQuantity>? = nil,
-        limitAutomaticDosing: Bool = false,
         name: String = "",
         duration: PresetDuration? = nil,
         startDate: Date? = nil,
@@ -61,7 +59,6 @@ public struct NewCustomPreset {
         self.savePreset = savePreset
         self.insulinMultiplier = insulinMultiplier
         self.correctionRange = correctionRange
-        self.limitAutomaticDosing = limitAutomaticDosing
         self.name = name
         self.duration = duration
         self.startDate = startDate
@@ -129,8 +126,7 @@ public extension NewCustomPreset {
 
         let settings = TemporaryPresetSettings(
             targetRange: correctionRange,
-            insulinNeedsScaleFactor: insulinMultiplier,
-            limitAutomaticDosing: limitAutomaticDosing
+            insulinNeedsScaleFactor: insulinMultiplier
         )
         
         let split = name.splitSymbolAndTitle()

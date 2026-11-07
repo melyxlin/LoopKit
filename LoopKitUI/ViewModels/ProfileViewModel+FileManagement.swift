@@ -8,7 +8,6 @@
 
 import LoopKit
 import HealthKit
-import LoopAlgorithm
 
 public enum ProfileValidationError: Error, LocalizedError {
     case fileLoadError
