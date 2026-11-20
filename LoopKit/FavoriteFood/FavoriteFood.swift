@@ -13,6 +13,8 @@ public protocol FavoriteFood {
     var carbsQuantity: LoopQuantity { get }
     var foodType: String { get }
     var absorptionTime: TimeInterval { get }
+    var protein: Double? { get }
+    var fat: Double? { get }
 }
 
 extension FavoriteFood {

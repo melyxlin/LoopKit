@@ -15,6 +15,7 @@ public protocol TherapySettingsViewModelDelegate: AnyObject {
     func syncDeliveryLimits(deliveryLimits: DeliveryLimits) async throws -> DeliveryLimits
     func saveCompletion(therapySettings: TherapySettings)
     func pumpSupportedIncrements() -> PumpSupportedIncrements?
+    func updateCurrentProfileName()
 }
 
 @Observable

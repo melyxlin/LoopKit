@@ -136,3 +136,17 @@ public extension RemoteDataService {
     var pumpEventDataLimit: Int? { return nil }
     var settingsDataLimit: Int? { return nil }
 }
+
+/// A remote data service that handles remote profile switch commands itself.
+public protocol RemoteProfileSwitchReceiver: RemoteDataService {
+    /// True when the push notification is a profile switch command.
+    func isProfileSwitch(_ notification: [String: AnyObject]) -> Bool
+
+    func profileSwitchWasReceived(_ notification: [String: AnyObject]) async
+}
+
+/// Switches to a saved therapy profile on a remote command.
+public protocol RemoteProfileActionDelegate: AnyObject {
+    /// `verify` receives the schedules about to be activated and throws to reject them.
+    func activateRemoteProfile(name: String, verify: (_ correctionRange: GlucoseRangeSchedule, _ carbRatio: CarbRatioSchedule, _ basalRate: BasalRateSchedule, _ insulinSensitivity: InsulinSensitivitySchedule) throws -> Void) async throws
+}

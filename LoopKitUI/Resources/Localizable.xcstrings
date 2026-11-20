@@ -1330,6 +1330,16 @@
         }
       }
     },
+    "%@ is the active profile. Load it now to use the edited settings. %@ writes the basal rates to the pump." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ is the active profile. Load it now to use the edited settings. %2$@ writes the basal rates to the pump."
+          }
+        }
+      }
+    },
     "%@." : {
       "comment" : "Appends a full-stop to a statement",
       "localizations" : {
@@ -4254,6 +4264,9 @@
         }
       }
     },
+    "A checkmark next to a profile name indicates that it's the active one.\n\nUse ‘+’ to create a new profile capturing your glucose targets, carb ratios, basal rates, and insulin sensitivities.\n\nTap a profile to review its settings. There you can edit them without loading the profile, and Load, Rename or Delete it.\n\nWant to change the order of profiles? Simply press and hold on a profile, then drag it to your desired position." : {
+
+    },
     "A Correction Range is different. The Correction Range is a " : {
 
     },
@@ -4402,6 +4415,9 @@
       }
     },
     "A percentage " : {
+
+    },
+    "A profile with this name already exists. Would you like to overwrite it?" : {
 
     },
     "A value of 0 U/hr means you will be scheduled to receive no basal insulin." : {
@@ -5902,6 +5918,9 @@
         }
       }
     },
+    "Are you sure you want to delete the profile %@? This action cannot be undone." : {
+
+    },
     "Are you sure you want to delete this preset?" : {
 
     },
@@ -6054,6 +6073,9 @@
         }
       }
     },
+    "Authentication is required to save this setting." : {
+      "comment" : "Authentication challenge description for basal lock threshold"
+    },
     "Back" : {
       "comment" : "Back navigation button title",
       "localizations" : {
@@ -6202,6 +6224,12 @@
           }
         }
       }
+    },
+    "Basal Lock prevents the basal rate from being throttled if the blood glucose is above a certain level." : {
+      "comment" : "Description for basal lock threshold setting"
+    },
+    "Basal Lock Threshold" : {
+      "comment" : "Title for basal lock threshold setting"
     },
     "Basal Rates" : {
       "comment" : "Title text for multi-value basal rate warning",
@@ -10868,6 +10896,9 @@
     "Delete Preset" : {
 
     },
+    "Delete Profile" : {
+
+    },
     "Delivery Limits" : {
       "comment" : "Title text for crossed thresholds guardrail warning",
       "localizations" : {
@@ -11308,6 +11339,9 @@
           }
         }
       }
+    },
+    "Do you want to load the profile %@?" : {
+
     },
     "Done" : {
       "comment" : "Text for dismiss button\nText for done button\nVideo player done button label",
@@ -12483,6 +12517,9 @@
         }
       }
     },
+    "Enable Basal Lock" : {
+
+    },
     "Enable Indefinitely" : {
       "comment" : "The text for the indefinite custom preset duration setting",
       "localizations" : {
@@ -13366,6 +13403,9 @@
           }
         }
       }
+    },
+    "Error loading profile" : {
+
     },
     "Event History" : {
       "comment" : "Segmented button title for insulin delivery log event history",
@@ -14537,6 +14577,9 @@
           }
         }
       }
+    },
+    "Got it!" : {
+
     },
     "High Basal Rate" : {
       "comment" : "Title text for the high basal rate warning",
@@ -16415,6 +16458,9 @@
         }
       }
     },
+    "Information" : {
+
+    },
     "Insulin adjustment is above the safety threshold" : {
 
     },
@@ -17161,6 +17207,21 @@
           }
         }
       }
+    },
+    "Keep Saved Profile" : {
+
+    },
+    "Later" : {
+
+    },
+    "Load" : {
+
+    },
+    "Load Edited Profile?" : {
+
+    },
+    "Load Profile" : {
+
     },
     "Low Basal Rate" : {
       "comment" : "Title text for the low basal rate warning",
@@ -20251,6 +20312,9 @@
         }
       }
     },
+    "New Profile" : {
+
+    },
     "Next Date" : {
 
     },
@@ -20552,6 +20616,12 @@
       }
     },
     "of scheduled" : {
+
+    },
+    "Off" : {
+
+    },
+    "OK" : {
 
     },
     "or" : {
@@ -21454,6 +21524,12 @@
         }
       }
     },
+    "Overwrite" : {
+
+    },
+    "Overwrite Existing Profile" : {
+
+    },
     "Pre-Meal" : {
       "comment" : "Title for the pre-meal override range",
       "localizations" : {
@@ -22039,6 +22115,15 @@
           }
         }
       }
+    },
+    "Profile Name" : {
+
+    },
+    "Profile Outdated" : {
+
+    },
+    "Profiles" : {
+      "comment" : "Title on ProfileView"
     },
     "Progressing." : {
       "comment" : "Accessibility label for ProgressIndicatorView when showIndeterminantProgress",
@@ -22775,6 +22860,12 @@
       }
     },
     "Recommended starting values" : {
+
+    },
+    "Rename" : {
+
+    },
+    "Rename Profile" : {
 
     },
     "Repeat" : {
@@ -23837,7 +23928,7 @@
 
     },
     "Save" : {
-      "comment" : "Button text for saving glucose correction range schedule\nButton text for saving insulin sensitivity schedule\nThe button text for saving on a configuration page",
+      "comment" : "Button text for saving glucose correction range schedule\nButton text for saving insulin sensitivity schedule\nSave button title\nThe button text for saving on a configuration page",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -23981,6 +24072,9 @@
     },
     "Save and Schedule for Later" : {
 
+    },
+    "Save Basal Lock Threshold?" : {
+      "comment" : "Alert title for confirming a basal lock threshold outside the recommended range"
     },
     "Save Basal Rates?" : {
       "comment" : "Alert title for confirming basal rates outside the recommended range",
@@ -24410,6 +24504,9 @@
           }
         }
       }
+    },
+    "Save Current Settings" : {
+
     },
     "Save Delivery Limits?" : {
       "comment" : "Alert title for confirming delivery limits outside the recommended range",
@@ -25593,6 +25690,7 @@
 
     },
     "Selected" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -27373,6 +27471,9 @@
         }
       }
     },
+    "Tap a setting to edit it in this profile. Editing changes only the saved profile; %@ keeps using its current settings until the profile is loaded. Scroll to find options to Load, Rename, or Delete." : {
+
+    },
     "Tap back to continue exploring the rest of the %@ interface." : {
       "localizations" : {
         "ar" : {
@@ -28544,6 +28645,9 @@
           }
         }
       }
+    },
+    "The current therapy settings differ from the saved profile %@. Save the current settings to it, or keep the saved profile and load it later to use its settings." : {
+
     },
     "The currently selected fast acting insulin model will be used as a default." : {
       "comment" : "Description for selection when no insulin type is selected.",
@@ -32050,6 +32154,7 @@
       }
     },
     "Unselected" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -32480,6 +32585,9 @@
 
     },
     "Until I turn off" : {
+
+    },
+    "Use ‘+’ to create a new profile capturing your glucose targets, carb ratios, basal rates, and insulin sensitivities." : {
 
     },
     "Use Scheduled Range" : {
@@ -33820,6 +33928,9 @@
           }
         }
       }
+    },
+    "Yes" : {
+
     },
     "Yes, Delete" : {
 
@@ -35557,6 +35668,9 @@
           }
         }
       }
+    },
+    "Your setting for basal lock is outside the recommended range." : {
+      "comment" : "Descriptive text for saving settings outside the recommended range for basal lock"
     }
   },
   "version" : "1.1"

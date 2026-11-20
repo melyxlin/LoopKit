@@ -8,6 +8,12 @@
 
 import Foundation
 
+/// Remote delete and edit of carb entries this app created.
+public protocol RemoteCarbEditActionDelegate: AnyObject {
+    func deleteRemoteCarbs(syncIdentifier: String) async throws
+    func replaceRemoteCarbs(syncIdentifier: String, amountInGrams: Double, absorptionTime: TimeInterval, foodType: String?, startDate: Date) async throws
+}
+
 public protocol RemoteActionDelegate: AnyObject {
     func enactRemoteOverride(name: String, durationTime: TimeInterval?, remoteAddress: String) async throws
     func cancelRemoteOverride() async throws
